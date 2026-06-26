@@ -84,12 +84,6 @@
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: 72vh;
-  }
-}
-
 .hero-title {
   display: flex;
   flex-direction: column;
@@ -653,37 +647,80 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: clamp(1.5rem, 7vw, 2rem);
-    line-height: 1.15;
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--hero-padding-top) + 0.5rem);
+    padding-bottom: var(--hero-padding-bottom);
   }
 
-  .hero-eyebrow {
-    margin-bottom: 0.85rem;
-    font-size: 0.62rem;
+  .hero-video-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.45) 50%,
+      rgba(0, 0, 0, 0.68) 100%
+    );
+  }
+
+  .hero-inner::before {
+    inset: -1rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.55rem, 6.8vw, 1.95rem);
+    line-height: 1.2;
+    margin-bottom: 0.9rem;
+    gap: 0.15rem;
   }
 
   .hero-description {
     font-size: 0.84rem;
-    margin-bottom: 1rem;
-    line-height: 1.7;
+    margin-bottom: 1.15rem;
+    line-height: 1.65;
+    padding: 0 0.15rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
   }
 
   .hero-feature {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.7rem;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.55rem;
     width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: 0 auto;
   }
 
-  .hero-actions .btn {
+  .hero-btn-primary,
+  .hero-btn-outline {
     width: 100%;
+    min-height: 46px;
+    justify-content: center;
+    font-size: 0.86rem;
+  }
+
+  .hero-accent-line {
+    width: min(180px, 40vw);
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.85rem;
+    font-size: 0.62rem;
   }
 
   .skills-section,
@@ -783,15 +820,35 @@
 }
 
 @media (max-width: 600px) {
-  .stats-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-top: 4.25rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 0.8rem;
+  }
+
   .hero-highlight {
     display: inline;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
   }
 }
 

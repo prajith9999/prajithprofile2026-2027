@@ -277,7 +277,25 @@
   }
 
   .header-brand {
-    border-bottom: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-brand-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .logo {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .header-actions {
+    position: static;
+    transform: none;
+    grid-column: 3;
+    justify-self: end;
   }
 
   .header-cta {
@@ -285,7 +303,7 @@
   }
 
   .header-shop {
-    display: flex;
+    display: none;
   }
 
   .menu-toggle {
