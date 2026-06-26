@@ -1,0 +1,73 @@
+export const experience = [
+  {
+    id: 1,
+    title: 'Software Architect',
+    company: 'CABTECH',
+    location: 'Doha, Qatar',
+    period: 'Mar 2026 – Present',
+    type: 'Full-Time',
+    highlights: [
+      'Designed and developed full-stack web applications using ASP.NET Core, C#, React.js, and MSSQL.',
+      'Built and maintained REST APIs for frontend and third-party integrations.',
+      'Deployed and maintained applications on Azure and AWS cloud environments.',
+      'Configured and managed CI/CD pipelines for automated build and deployment.',
+      'Converted Figma designs into production-ready frontend components.',
+      'Improved application performance, reliability, and security across environments.',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Software Developer',
+    company: 'VHYPOTENUSE',
+    location: 'Bengaluru, India',
+    period: 'Apr 2024 – May 2025',
+    type: 'Full-Time',
+    highlights: [
+      'Worked as a .NET Full Stack Developer with 1 year and 2 months of professional experience.',
+      'Contributed to Cloud & DevOps using AWS and Microsoft Azure (App Service, VMs, ACR, AKS).',
+      'Implemented CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins.',
+      'Managed containerized applications with Docker and Kubernetes deployments.',
+      'Provisioned infrastructure using Terraform, Linux administration, and Shell scripting.',
+      'Built backend applications with C#, ASP.NET Core, Entity Framework Core, and JWT Authentication.',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Cloud Engineer',
+    company: 'CloudXgens',
+    location: 'Kerala, India',
+    period: 'Mar 2023 – Mar 2024',
+    type: 'Internship',
+    highlights: [
+      'Completed a full-time internship as a Cloud Engineer.',
+      'Managed AWS infrastructure including provisioning and monitoring cloud resources.',
+      'Supported DevOps activities including deployment and automation tasks.',
+      'Administered Linux servers ensuring system performance and security.',
+      'Created and executed Ansible playbooks for configuration management.',
+      'Built and managed Docker containers for application deployment.',
+    ],
+  },
+  {
+    id: 4,
+    title: 'ICT System Administrator',
+    company: 'Fortune Systems',
+    location: 'Kerala, India',
+    period: 'Oct 2020 – Dec 2021',
+    type: 'Full-Time',
+    highlights: [
+      'Specialized in centralized and distributed LAN networking and system administration.',
+      'Configured VLANs, trunking, IPv6, routing, and switching for optimized network performance.',
+      'Managed firewall configurations, security rules, and network traffic monitoring.',
+      'Installed and maintained servers, operating systems, routers, and workstations.',
+      'Managed SQL Server environments including maintenance and performance optimization.',
+      'Handled hardware troubleshooting, printer configuration, and network cabling.',
+    ],
+  },
+];
+
+export const education = {
+  degree: 'MCA',
+  institution: 'Brindavan College',
+  location: 'Bangalore',
+  year: '2024',
+};

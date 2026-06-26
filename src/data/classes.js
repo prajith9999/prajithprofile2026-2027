@@ -1,0 +1,32 @@
+export const onlineClasses = [
+  {
+    id: 1,
+    title: '.NET Full Stack Development',
+    category: 'Technology',
+    icon: 'code',
+    duration: '12 Weeks',
+    mode: 'Live Online',
+    description: 'Master C#, ASP.NET Core, React, REST APIs, and SQL Server through structured live sessions and hands-on projects.',
+    topics: ['ASP.NET Core', 'C#', 'React.js', 'SQL Server', 'JWT Auth'],
+  },
+  {
+    id: 2,
+    title: 'Cloud Engineering (Azure & AWS)',
+    category: 'Technology',
+    icon: 'cloud',
+    duration: '10 Weeks',
+    mode: 'Live Online',
+    description: 'Learn cloud fundamentals, deployment models, and core services on Microsoft Azure and Amazon Web Services.',
+    topics: ['Azure', 'AWS', 'EC2', 'S3', 'VPC', 'IAM'],
+  },
+  {
+    id: 3,
+    title: 'System Administration, Networking & Linux',
+    category: 'Technology',
+    icon: 'server',
+    duration: '8 Weeks',
+    mode: 'Live Online',
+    description: 'Linux and Windows server administration, networking fundamentals, firewalls, routing, and infrastructure security.',
+    topics: ['Linux', 'Windows Server', 'Networking', 'Firewall', 'Ansible'],
+  },
+];

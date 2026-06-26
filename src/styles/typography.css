@@ -1,0 +1,72 @@
+/* Poppins typography — varied weights for visual hierarchy */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-relaxed);
+}
+
+.text-display {
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.text-heading {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+}
+
+.text-subheading {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-snug);
+}
+
+.text-body {
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-relaxed);
+}
+
+.text-muted {
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+
+.text-label {
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  font-size: 0.75rem;
+}
+
+.text-stat {
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-nav {
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-nav-active {
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-btn {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+.text-light {
+  font-weight: var(--font-weight-light);
+  letter-spacing: var(--tracking-wide);
+}
