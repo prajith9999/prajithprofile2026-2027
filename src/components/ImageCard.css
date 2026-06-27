@@ -3,12 +3,13 @@
   flex-direction: column;
   padding: 0;
   overflow: hidden;
-  background: var(--color-bg-card);
-  transition: border-color var(--transition);
+  border: 1px solid var(--glass-border);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .image-card:hover {
-  border-color: var(--color-blue);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
 }
 
 .image-card-media {

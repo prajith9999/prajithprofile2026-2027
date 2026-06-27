@@ -1,0 +1,121 @@
+/* Glassmorphism — shared surfaces for sections, cards, and panels */
+
+.glass-surface,
+.section,
+.page-hero {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-top: 1px solid var(--glass-border-subtle);
+  border-bottom: 1px solid var(--glass-border-subtle);
+  box-shadow: var(--glass-shadow-inset);
+}
+
+.glass-surface--elevated,
+.glass-elevated {
+  background: var(--glass-bg-elevated);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-surface--dark {
+  background: var(--glass-dark-bg);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border-top: 1px solid var(--glass-border-subtle);
+  border-bottom: 1px solid var(--glass-border-subtle);
+}
+
+.glass-surface--light {
+  background: var(--glass-light-bg);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border-top: 1px solid var(--glass-light-border);
+  border-bottom: 1px solid var(--glass-light-border);
+}
+
+.glass-card {
+  background: var(--glass-bg-elevated);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-strong);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* Alternating section depth */
+.section:nth-of-type(even) {
+  background: var(--glass-bg-elevated);
+}
+
+/* Cards & boxes */
+.box,
+.glass,
+.skill-card,
+.class-card,
+.image-card,
+.insight-card,
+.about-snippet-card,
+.experience-card,
+.timeline-item,
+.project-card,
+.achievement-stat,
+.about-stat,
+.value-card,
+.personal-card,
+.contact-detail,
+.education-card,
+.cta-box,
+.contact-form,
+.contact-info-panel,
+.languages-table-wrapper {
+  background: var(--glass-bg-elevated);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.insight-card-body,
+.skill-card-body,
+.class-card-body {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-surface,
+  .section,
+  .page-hero,
+  .glass-surface--elevated,
+  .glass-elevated,
+  .glass-surface--dark,
+  .glass-surface--light,
+  .glass-card,
+  .box,
+  .glass,
+  .skill-card,
+  .class-card,
+  .image-card,
+  .insight-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .box,
+  .glass {
+    transition: none;
+  }
+}

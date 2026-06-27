@@ -16,6 +16,41 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const isDesktop = window.matchMedia('(min-width: 901px)').matches;
+        const next = isDesktop && window.scrollY > 56;
+        setScrolled((prev) => (prev === next ? prev : next));
+        document.documentElement.classList.toggle('header-scrolled', next);
+        ticking = false;
+      });
+    };
+
+    const onResize = () => {
+      if (!window.matchMedia('(min-width: 901px)').matches) {
+        setScrolled(false);
+        document.documentElement.classList.remove('header-scrolled');
+      } else {
+        onScroll();
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      document.documentElement.classList.remove('header-scrolled');
+    };
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -36,7 +71,7 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       {menuOpen && (
         <button
           type="button"
@@ -133,15 +168,11 @@ export default function Header() {
                 onClick={closeMenu}
               >
                 <AppIcon name="shoppingBag" size={20} />
-                Shop Courses
+                Courses
               </Link>
               <Link to="/contact" className="nav-mobile-link" onClick={closeMenu}>
                 <AppIcon name="login" size={20} />
                 Log In
-              </Link>
-              <Link to="/contact" className="btn btn-primary nav-mobile-contact" onClick={closeMenu}>
-                <AppIcon name="envelope" size={18} />
-                Contact
               </Link>
             </div>
           </nav>

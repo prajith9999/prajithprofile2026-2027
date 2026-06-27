@@ -28,7 +28,7 @@ export default function Contact() {
       <section id="hero" className="page-hero">
         <div className="container">
           <span className="page-badge">Get in Touch</span>
-          <h1 className="page-title">Contact Me</h1>
+          <h1 className="page-title split-text" data-split="lines" data-split-on="load">Contact Me</h1>
           <p className="page-description">
             Open to opportunities in .NET development, cloud computing, and DevOps engineering.
             Feel free to reach out for collaborations or job inquiries.

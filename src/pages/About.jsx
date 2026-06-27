@@ -16,7 +16,7 @@ export default function About() {
       <section id="hero" className="page-hero">
         <div className="container">
           <span className="page-badge">About Me</span>
-          <h1 className="page-title">My Story</h1>
+          <h1 className="page-title split-text" data-split="lines" data-split-on="load">My Story</h1>
           <p className="page-description">
             Software Engineer based in {profile.location} — a journey through development,
             cloud engineering, and enterprise IT delivery.
@@ -52,23 +52,24 @@ export default function About() {
               Key chapters from my career — from hands-on development to cloud architecture in Qatar.
             </p>
           </div>
-          <div className="story-list">
-            {stories.map((story, index) => (
-              <article
-                key={story.id}
-                className={`story-row box ${index % 2 === 1 ? 'story-row-reverse' : ''}`}
-              >
-                <div className="story-image">
-                  <img src={story.image} alt={story.title} loading="lazy" />
-                </div>
-                <div className="story-content">
-                  <span className="story-label">{story.label}</span>
-                  <h3>{story.title}</h3>
-                  <p>{story.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+        </div>
+        <div className="story-list">
+          {stories.map((story, index) => (
+            <article
+              key={story.id}
+              className={`story-row ${index % 2 === 1 ? 'story-row-reverse' : ''}`}
+            >
+              <div className="story-image">
+                <img src={story.image} alt={story.title} loading="lazy" />
+                <span className="story-image-badge">{story.label}</span>
+              </div>
+              <div className={`story-content story-content--${story.theme}`}>
+                <span className="story-label">{story.label}</span>
+                <h3>{story.title}</h3>
+                <p>{story.text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -82,7 +83,7 @@ export default function About() {
               { label: 'Work Permit', value: profile.workPermit },
               { label: 'Location', value: profile.location },
             ].map((item) => (
-              <div key={item.label} className="personal-card box">
+              <div key={item.label} className="personal-card">
                 <span className="personal-label">{item.label}</span>
                 <span className="personal-value">{item.value}</span>
               </div>

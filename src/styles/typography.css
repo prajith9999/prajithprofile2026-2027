@@ -1,60 +1,114 @@
-/* Poppins typography — varied weights for visual hierarchy */
+/* Poppins — full weight range, classic professional hierarchy */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family);
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-normal);
+}
+
+h1 {
   font-weight: var(--font-weight-bold);
-  letter-spacing: var(--tracking-tight);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
   line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-h1);
+}
+
+h2 {
+  font-weight: var(--font-weight-semibold);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+}
+
+h4, h5, h6 {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  line-height: var(--leading-snug);
 }
 
 p {
   font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
   line-height: var(--leading-relaxed);
 }
 
+strong, b {
+  font-weight: var(--font-weight-medium);
+}
+
+small {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+}
+
 .text-display {
-  font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-display);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
 }
 
 .text-heading {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-snug);
 }
 
 .text-subheading {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
   letter-spacing: var(--tracking-normal);
   line-height: var(--leading-snug);
 }
 
 .text-body {
   font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: var(--leading-relaxed);
+}
+
+.text-body-lg {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
   line-height: var(--leading-relaxed);
 }
 
 .text-muted {
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-base);
   color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
 }
 
 .text-label {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
 }
 
 .text-stat {
-  font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-2xl);
   letter-spacing: var(--tracking-tight);
 }
 
 .text-nav {
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-normal);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-wide);
 }
 
 .text-nav-active {
@@ -62,11 +116,24 @@ p {
 }
 
 .text-btn {
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.02em;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-wide);
 }
 
 .text-light {
   font-weight: var(--font-weight-light);
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-thin {
+  font-weight: var(--font-weight-thin);
+}
+
+.text-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.text-medium {
+  font-weight: var(--font-weight-medium);
 }

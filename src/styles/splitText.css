@@ -1,0 +1,127 @@
+/* SplitText-style masks — Cipher Digital reveal */
+
+.split-text,
+.is-split {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+h1.split-text,
+h1.split-text .split-word,
+h1.split-text .split-char,
+h1.split-text .split-line,
+h1.split-text .split-line-mask,
+h1.split-text .split-space,
+.page-title.split-text,
+.page-title.split-text .split-word,
+.page-title.split-text .split-char,
+.page-title.split-text .split-line,
+.page-title.split-text .split-line-mask,
+.page-title.split-text .split-space,
+.premium-gradient-headline.split-text,
+.premium-gradient-headline.split-text .split-word,
+.premium-gradient-headline.split-text .split-char,
+.premium-gradient-headline.split-text .split-line,
+.premium-gradient-headline.split-text .split-line-mask,
+.premium-gradient-headline.split-text .split-space {
+  letter-spacing: var(--tracking-h1);
+}
+
+.split-line {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.split-line-mask {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.split-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: inherit;
+}
+
+.split-word,
+.split-char {
+  display: inline-block;
+  will-change: transform, opacity;
+  line-height: inherit;
+}
+
+.split-space {
+  display: inline;
+  white-space: pre;
+}
+
+.premium-gradient-headline.split-text .split-word,
+.premium-gradient-headline.split-text .split-char {
+  background: linear-gradient(
+    105deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-mid) 35%,
+    var(--color-gradient-end) 70%,
+    var(--color-gradient-soft) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.premium-cta-title.split-text .split-word {
+  background: linear-gradient(
+    105deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-mid) 35%,
+    var(--color-gradient-end) 70%,
+    var(--color-gradient-soft) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.page-title.split-text .split-line-mask,
+.page-title.split-text .split-word {
+  color: var(--color-text);
+}
+
+.section-title.split-text .split-line-mask,
+.section-title.split-text .split-word {
+  color: var(--color-text);
+}
+
+.premium-display.split-text .split-line-mask,
+.premium-display.split-text .split-word {
+  color: #0a0a0a;
+}
+
+.premium-statement-sub.split-text .split-line-mask,
+.premium-statement-sub.split-text .split-word {
+  color: #faf9f6;
+}
+
+.prefooter-headline.split-text .split-line-mask,
+.prefooter-headline.split-text .split-word {
+  color: var(--color-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-text.is-split .split-line,
+  .split-text.is-split .split-mask {
+    overflow: visible;
+  }
+
+  .split-word,
+  .split-char,
+  .split-line-mask {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

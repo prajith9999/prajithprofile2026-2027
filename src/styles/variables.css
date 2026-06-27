@@ -13,13 +13,28 @@
   --color-text-muted: rgba(255, 255, 255, 0.72);
   --color-text-subtle: rgba(255, 255, 255, 0.5);
 
-  /* Accents */
-  --color-blue: #3b82f6;
-  --color-blue-dark: #2563eb;
-  --color-blue-light: rgba(59, 130, 246, 0.15);
-  --color-orange: #ea580c;
-  --color-orange-dark: #c2410c;
-  --color-orange-light: rgba(234, 88, 12, 0.15);
+  /* Accents — violet + green (unified premium palette) */
+  --color-violet: #8b5cf6;
+  --color-violet-dark: #7c3aed;
+  --color-violet-light: rgba(139, 92, 246, 0.15);
+  --color-green: #22c55e;
+  --color-green-dark: #16a34a;
+  --color-green-light: rgba(34, 197, 94, 0.15);
+  --color-rose: var(--color-green);
+  --color-rose-dark: var(--color-green-dark);
+  --color-rose-light: var(--color-green-light);
+  --color-gradient-start: #8b5cf6;
+  --color-gradient-mid: #a855f7;
+  --color-gradient-end: #22c55e;
+  --color-gradient-soft: #4ade80;
+
+  /* Legacy compat — maps old blue/orange tokens to new palette */
+  --color-blue: var(--color-violet);
+  --color-blue-dark: var(--color-violet-dark);
+  --color-blue-light: var(--color-violet-light);
+  --color-orange: var(--color-green);
+  --color-orange-dark: var(--color-green-dark);
+  --color-orange-light: var(--color-green-light);
 
   /* Legacy compat */
   --color-black: var(--color-text);
@@ -29,8 +44,8 @@
   --color-coffee-light: var(--color-text-muted);
   --color-primary-dark: var(--color-text);
   --color-primary: var(--color-text-muted);
-  --color-accent: var(--color-orange);
-  --color-link: var(--color-blue);
+  --color-accent: var(--color-green);
+  --color-link: var(--color-violet);
   --color-footer-bg: var(--color-bg-footer);
   --color-ash: #2a2a2a;
   --color-ash-dark: #404040;
@@ -38,22 +53,36 @@
   --color-ash-darker: #1a1a1a;
 
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
+  --font-weight-extrabold: 700;
+
+  /* Type scale — classic professional */
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-base: 1.0625rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.75rem;
+  --font-size-display: clamp(2.5rem, 6vw, 4.5rem);
 
   /* Type scale */
-  --leading-tight: 1.15;
-  --leading-snug: 1.35;
-  --leading-normal: 1.6;
-  --leading-relaxed: 1.75;
-  --tracking-tight: -0.03em;
-  --tracking-normal: -0.01em;
-  --tracking-wide: 0.08em;
-  --tracking-wider: 0.14em;
+  --leading-tight: 1.2;
+  --leading-snug: 1.4;
+  --leading-normal: 1.65;
+  --leading-relaxed: 1.8;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em;
+  --tracking-h1: 0.02em;
 
   /* Square design — no rounded corners */
   --radius-sm: 0;
@@ -78,4 +107,21 @@
   --card-padding: 2.75rem;
   --card-padding-lg: 3.25rem;
   --stat-padding-y: 3.25rem;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.09);
+  --glass-dark-bg: rgba(0, 0, 0, 0.45);
+  --glass-light-bg: rgba(235, 232, 227, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.16);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-light-border: rgba(255, 255, 255, 0.35);
+  --glass-blur-sm: 12px;
+  --glass-blur: 18px;
+  --glass-blur-lg: 24px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.34);
+  --glass-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }

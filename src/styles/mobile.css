@@ -1,0 +1,231 @@
+/* Mobile audit — touch targets, overflow, performance, layout */
+
+@media (max-width: 900px) {
+  .main-content {
+    background-attachment: scroll;
+  }
+
+  .header {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 0));
+  }
+
+  .nav-link,
+  .nav-mobile-link {
+    min-height: 48px;
+  }
+
+  /* Lighter glass on mobile for performance */
+  .section,
+  .page-hero,
+  .footer,
+  .box,
+  .glass,
+  .skill-card,
+  .class-card,
+  .image-card,
+  .insight-card,
+  .about-snippet-image,
+  .about-snippet-text,
+  .about-snippet-card,
+  .experience-content,
+  .contact-detail,
+  .contact-form,
+  .value-card,
+  .personal-card,
+  .achievement-stat,
+  .timeline-item,
+  .project-card,
+  .premium-statement,
+  .premium-split,
+  .premium-slide,
+  .home-prefooter,
+  .philosophy-slide {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-gradient-headline {
+    font-size: clamp(1.9rem, 8.5vw, 2.75rem);
+    line-height: var(--leading-snug);
+  }
+
+  .premium-statement-sub {
+    font-size: clamp(1.2rem, 5vw, 1.65rem);
+  }
+
+  .premium-eyebrow {
+    font-size: var(--font-size-xs);
+    line-height: var(--leading-normal);
+  }
+
+  .philosophy-headline {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-hero-text .page-description {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-snippet-text,
+  .about-snippet-card {
+    padding: var(--card-padding);
+  }
+
+  .about-snippet-card .snippet-row {
+    padding: 0.85rem 1.15rem;
+  }
+
+  .classes-cta .btn,
+  .about-snippet-btn,
+  .form-submit,
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-col a,
+  .footer-col li,
+  .contact-detail-value,
+  .contact-link,
+  .personal-value,
+  .philosophy-link {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .footer-social a {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .philosophy-link,
+  .prefooter-link,
+  .premium-link {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .experience-gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .personal-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.25rem;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .personal-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .personal-card {
+    flex: 0 0 min(70vw, 200px);
+    scroll-snap-align: start;
+  }
+
+  .home-stats-minimal {
+    gap: 0.5rem 0;
+  }
+
+  .stat-minimal {
+    padding: clamp(1.5rem, 5vw, 2rem) 0.75rem;
+  }
+
+  .stat-minimal-label {
+    max-width: none;
+    font-size: 0.7rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-brand-tagline {
+    font-size: clamp(0.58rem, 2.6vw, 0.68rem);
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  .header-brand-inner {
+    gap: 0.4rem;
+  }
+
+  .premium-split-head .gsap-word {
+    font-size: clamp(2rem, 11vw, 2.65rem);
+  }
+
+  .premium-display {
+    font-size: clamp(1.75rem, 8.5vw, 2.35rem);
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-stats-minimal {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-minimal-value {
+    font-size: clamp(1.85rem, 10vw, 2.25rem);
+  }
+
+  .skill-body,
+  .class-card {
+    min-height: 0;
+  }
+
+  .class-card {
+    min-height: 280px;
+  }
+}

@@ -8,7 +8,7 @@ export default function Experience() {
       <section id="hero" className="page-hero">
         <div className="container">
           <span className="page-badge">Work History</span>
-          <h1 className="page-title">Work Experience</h1>
+          <h1 className="page-title split-text" data-split="lines" data-split-on="load">Work Experience</h1>
           <p className="page-description">
             4+ years of IT experience across software development, cloud engineering,
             DevOps, and system administration roles.

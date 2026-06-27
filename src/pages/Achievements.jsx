@@ -9,7 +9,9 @@ export default function Achievements() {
       <section id="hero" className="page-hero">
         <div className="container">
           <span className="page-badge">Credentials</span>
-          <h1 className="page-title">Certifications & Projects</h1>
+          <h1 className="page-title split-text" data-split="lines" data-split-on="load">
+            Certifications & Projects
+          </h1>
           <p className="page-description">
             Professional certifications, academic projects, and language proficiencies
             that complement my technical expertise.

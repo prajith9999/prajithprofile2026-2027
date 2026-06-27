@@ -6,6 +6,7 @@ export const stories = [
     label: 'Chapter 01',
     title: 'Professional Profile',
     image: images.profile,
+    theme: 'navy',
     text: 'Software Engineer based in Doha, Qatar with a Qatari work permit. I bring a professional, client-ready presence to every enterprise engagement — from architecture discussions to production delivery.',
   },
   {
@@ -13,6 +14,7 @@ export const stories = [
     label: 'Chapter 02',
     title: 'Enterprise Development',
     image: images.officeLaptop,
+    theme: 'blue',
     text: 'In office and enterprise environments, I design and build full-stack solutions using ASP.NET Core, React, and SQL Server — turning business requirements into secure, maintainable applications.',
   },
   {
@@ -20,6 +22,7 @@ export const stories = [
     label: 'Chapter 03',
     title: 'Hands-On Coding',
     image: images.developer,
+    theme: 'slate',
     text: 'Development is where ideas become products. I work hands-on with React, .NET, REST APIs, and cloud platforms — writing clean code and shipping features that perform in the real world.',
   },
   {
@@ -27,6 +30,7 @@ export const stories = [
     label: 'Chapter 04',
     title: 'Corporate IT Delivery',
     image: images.corporate,
+    theme: 'coffee',
     text: 'Corporate settings demand discipline, communication, and reliability. I thrive in structured teams, delivering cloud and DevOps solutions aligned with business goals and timelines.',
   },
   {
@@ -34,6 +38,7 @@ export const stories = [
     label: 'Chapter 05',
     title: 'Career Journey',
     image: images.professionalWalk,
+    theme: 'navy',
     text: 'From Kerala to Bengaluru to Doha, my career reflects steady growth — ICT administration, cloud engineering internship, full-stack development, and software architecture.',
   },
   {
@@ -41,6 +46,7 @@ export const stories = [
     label: 'Chapter 06',
     title: 'Business Ready',
     image: images.business,
+    theme: 'blue',
     text: 'Professional presentation matters. I represent engineering teams with confidence — ready for client meetings, technical reviews, and cross-functional collaboration.',
   },
   {
@@ -48,6 +54,7 @@ export const stories = [
     label: 'Chapter 07',
     title: 'Creative Problem Solving',
     image: images.casual,
+    theme: 'slate',
     text: 'Beyond formal settings, I approach problems with curiosity and ownership. Debugging, optimizing, and improving systems is how I deliver lasting value.',
   },
   {
@@ -55,6 +62,7 @@ export const stories = [
     label: 'Chapter 08',
     title: 'Life in Qatar',
     image: images.outdoor,
+    theme: 'coffee',
     text: 'Now based in Doha, I am open to opportunities across the Gulf and internationally — combining global experience with local presence and availability.',
   },
 ];

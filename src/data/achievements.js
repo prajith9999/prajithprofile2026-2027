@@ -61,7 +61,7 @@ export const projects = [
     period: 'Feb 2023 – Apr 2023',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SQL'],
     description: 'Developed a travel booking platform with consumer-facing booking workflows and database integration.',
-    gradient: 'linear-gradient(145deg, #1e3a8a 0%, #3b82f6 55%, #60a5fa 100%)',
+    gradient: 'linear-gradient(145deg, #5b21b6 0%, #8b5cf6 55%, #c4b5fd 100%)',
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ export const projects = [
     period: 'May 2023 – Jul 2023',
     technologies: ['Full-Stack Web Development'],
     description: 'Built an e-commerce solution with product catalog, cart functionality, and order management.',
-    gradient: 'linear-gradient(145deg, #6b21a8 0%, #a855f7 55%, #e879f9 100%)',
+    gradient: 'linear-gradient(145deg, #6b21a8 0%, #a855f7 55%, #4ade80 100%)',
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ export const projects = [
     period: 'Aug 2023 – Apr 2024',
     technologies: ['Azure DevOps', 'Docker', 'Terraform', 'Kubernetes', 'AWS'],
     description: 'CI/CD pipelines, Docker containerization, AWS infrastructure with Terraform, and Kubernetes deployments on Minikube.',
-    gradient: 'linear-gradient(145deg, #9a3412 0%, #ea580c 55%, #fb923c 100%)',
+    gradient: 'linear-gradient(145deg, #14532d 0%, #22c55e 55%, #86efac 100%)',
   },
   {
     id: 4,
@@ -101,6 +101,6 @@ export const projects = [
     period: '2023 – 2024',
     technologies: ['Terraform', 'AWS EC2', 'S3', 'VPC', 'Ansible', 'Linux'],
     description: 'Provisioned and automated AWS cloud infrastructure using Terraform, configured VPC and security groups, and managed Linux servers with Ansible playbooks.',
-    gradient: 'linear-gradient(145deg, #1e293b 0%, #334155 50%, #3b82f6 100%)',
+    gradient: 'linear-gradient(145deg, #1e293b 0%, #4c1d95 50%, #8b5cf6 100%)',
   },
 ];
