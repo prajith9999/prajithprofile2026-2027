@@ -158,7 +158,6 @@ function animateHomeLanding(root) {
   const ctaSection = root.querySelector('.home-prefooter, .premium-cta');
   const philosophySlide = root.querySelector('.philosophy-slide');
   const philosophyHeadline = root.querySelector('.philosophy-headline');
-  const philosophyVisual = root.querySelector('.philosophy-slide-image');
 
   if (philosophyHeadline && philosophySlide) {
     gsap.from(philosophyHeadline, {
@@ -172,22 +171,6 @@ function animateHomeLanding(root) {
       opacity: 0,
       duration: 1,
       ease: 'power3.out',
-    });
-  }
-
-  if (philosophyVisual && philosophySlide) {
-    gsap.from(philosophyVisual, {
-      scrollTrigger: {
-        trigger: philosophySlide,
-        start: 'top 82%',
-        toggleActions: SCROLL_TOGGLE,
-        once: true,
-      },
-      x: 40,
-      opacity: 0,
-      duration: 1.1,
-      ease: 'power3.out',
-      delay: 0.1,
     });
   }
 

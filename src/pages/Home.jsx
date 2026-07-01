@@ -13,18 +13,35 @@ import './Home.css';
 export default function Home() {
   return (
     <div className="page-enter home-page">
-      <section id="hero" className="hero-video-section" aria-label="Introduction video">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source src="/13318564_3840_2160_25fps.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-video-overlay" aria-hidden="true" />
+      <section id="hero" className="hero-apple" aria-label="Introduction">
+        <div className="hero-apple-bg" aria-hidden="true">
+          <span className="hero-apple-orb hero-apple-orb--blue" />
+          <span className="hero-apple-orb hero-apple-orb--purple" />
+          <span className="hero-apple-orb hero-apple-orb--starlight" />
+        </div>
+        <div className="container hero-apple-inner">
+          <p className="hero-apple-eyebrow split-text" data-split="words" data-scrub="false">
+            {profile.title} · {profile.location}
+          </p>
+          <h1
+            className="hero-apple-headline split-text"
+            data-split="lines"
+            data-split-on="load"
+          >
+            Engineered.
+          </h1>
+          <p className="hero-apple-tagline split-text" data-split="lines" data-scrub="false">
+            Built for scale. Delivered with precision.
+          </p>
+          <div className="hero-apple-actions gsap-reveal-item">
+            <Link to="/experience" className="hero-apple-cta hero-apple-cta--primary">
+              View Experience
+            </Link>
+            <Link to="/contact" className="hero-apple-cta hero-apple-cta--ghost">
+              Get in Touch
+            </Link>
+          </div>
+        </div>
       </section>
 
       <section className="premium-statement">
@@ -105,12 +122,16 @@ export default function Home() {
           <div className="container">
             <div className="home-stats-minimal">
               {[
-                { ...stats[0], icon: 'briefcase' },
-                { ...stats[1], icon: 'users' },
-                { ...stats[2], icon: 'code' },
-                { ...stats[3], icon: 'rocket' },
+                { ...stats[0], icon: 'briefcase', gradient: 'linear-gradient(145deg, #0071e3 0%, #2997ff 100%)', tone: 'dark' },
+                { ...stats[1], icon: 'users', gradient: 'linear-gradient(145deg, #6d28d9 0%, #8b5cf6 100%)', tone: 'dark' },
+                { ...stats[2], icon: 'code', gradient: 'linear-gradient(145deg, #3a3a3c 0%, #86868b 100%)', tone: 'dark' },
+                { ...stats[3], icon: 'rocket', gradient: 'linear-gradient(145deg, #d4c4b0 0%, #f5f0e8 100%)', tone: 'light' },
               ].map((stat) => (
-                <div key={stat.label} className="stat-minimal stat-box">
+                <div
+                  key={stat.label}
+                  className={`stat-minimal stat-box color-glass-card stat-card${stat.tone === 'light' ? ' color-glass-card--starlight stat-card--light' : ''}`}
+                  style={{ background: stat.gradient }}
+                >
                   <AppIcon name={stat.icon} size={36} className="stat-minimal-icon" />
                   <span
                     className="stat-minimal-value"
@@ -242,40 +263,31 @@ export default function Home() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="philosophy-link"
+                className="philosophy-link btn btn-primary"
               >
                 <AppIcon name="briefcase" size={18} />
                 Connect on LinkedIn
               </a>
-              <Link to="/contact" className="philosophy-link">
+              <Link to="/contact" className="philosophy-link btn btn-outline">
                 <AppIcon name="envelope" size={18} />
                 Contact Me
               </Link>
             </div>
-          </div>
-          <div className="philosophy-slide-visual">
-            <img
-              src={prefooterHeadline.image}
-              alt={prefooterHeadline.imageAlt}
-              className="philosophy-slide-image"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
 
         <div className="container home-prefooter-inner">
           <div className="insight-cards-grid">
             {insightCards.map((card) => (
-              <article key={card.id} className="insight-card stat-box">
-                <div
-                  className="insight-card-visual"
-                  style={{ background: card.gradient }}
-                  aria-hidden="true"
-                >
+              <article
+                key={card.id}
+                className={`insight-card stat-box color-glass-card${card.tone === 'light' ? ' color-glass-card--starlight' : ''}`}
+                style={{ background: card.gradient }}
+              >
+                <div className="insight-card-visual color-glass-card__header" aria-hidden="true">
                   <AppIcon name={card.icon} size={40} className="insight-card-icon" />
                 </div>
-                <div className="insight-card-body">
+                <div className="insight-card-body color-glass-card__body">
                   <span className="insight-card-label">{card.label}</span>
                   <h3 className="insight-card-title">{card.title}</h3>
                   <span className="insight-card-meta">{card.meta}</span>

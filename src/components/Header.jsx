@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import AppIcon from './AppIcon';
-import Logo from './Logo';
 import { profile } from '../data/profile';
 import './Header.css';
 
@@ -106,12 +105,15 @@ export default function Header() {
 
       <div className="header-brand">
         <div className="container header-brand-inner">
+          <Link to="/" className="header-brand-mark" onClick={closeMenu} aria-label="PM — Home">
+            <span className="header-utility-brand__p">P</span>
+            <span className="header-utility-brand__m">M</span>
+          </Link>
+
           <p className="header-brand-tagline">
             <AppIcon name="mapPin" size={13} />
             <span>{profile.title} · {profile.location}</span>
           </p>
-
-          <Logo to="/" className="logo" onClick={closeMenu} />
 
           <div className="header-actions">
             <Link

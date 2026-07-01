@@ -3,10 +3,14 @@ import './SkillCard.css';
 
 export default function SkillCard({ skill, showImage = false, index }) {
   const number = String(index).padStart(2, '0');
+  const isLight = skill.tone === 'light';
 
   return (
-    <article className="skill-card skill-card-item">
-      <div className="skill-card-top">
+    <article
+      className={`skill-card skill-card-item color-glass-card${isLight ? ' color-glass-card--starlight skill-card--light' : ''}`}
+      style={{ background: skill.gradient }}
+    >
+      <div className="skill-card-top color-glass-card__header">
         <span className="skill-number">{number}</span>
         {showImage && skill.image ? (
           <div className="skill-thumb">
@@ -22,7 +26,7 @@ export default function SkillCard({ skill, showImage = false, index }) {
           </div>
         )}
       </div>
-      <div className="skill-body">
+      <div className="skill-body color-glass-card__body">
         <h3 className="skill-title">{skill.title}</h3>
         <p className="skill-description">{skill.description}</p>
         <div className="skill-tags">

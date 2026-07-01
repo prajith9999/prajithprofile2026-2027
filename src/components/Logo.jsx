@@ -5,7 +5,7 @@ import './Logo.css';
 export default function Logo({ to, className = '', onClick, ...rest }) {
   const content = (
     <span className="brand-logo__icon" aria-hidden="true">
-      <img src={logoBird} alt="" width={30} height={30} decoding="async" />
+      <img src={logoBird} alt="" width={52} height={52} decoding="async" />
     </span>
   );
 

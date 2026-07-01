@@ -48,17 +48,18 @@ body {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  color: var(--color-blue);
+  border: 1px solid var(--glass-border-subtle);
+  background: var(--glass-bg-elevated);
+  color: var(--apple-blue);
+  border-radius: 50%;
   transition: all var(--transition);
   pointer-events: none;
 }
 
 .skill-card:hover .card-arrow,
 .class-card:hover .card-arrow {
-  background: var(--color-blue);
-  border-color: var(--color-blue);
+  background: var(--apple-blue);
+  border-color: var(--apple-blue);
   color: var(--color-white);
 }
 
@@ -122,7 +123,7 @@ ul {
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  color: var(--color-orange);
+  color: var(--apple-blue);
   margin-bottom: 0.65rem;
 }
 
@@ -148,46 +149,48 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: 0;
+  padding: 0.75rem 1.65rem;
+  border-radius: 980px;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-normal);
   transition: all var(--transition);
   border: 1px solid transparent;
 }
 
 .btn-primary {
-  background: var(--color-blue);
+  background: var(--apple-purple);
   color: var(--color-white);
-  border-color: var(--color-blue);
+  border-color: var(--apple-purple);
 }
 
 .btn-primary:hover {
-  background: var(--color-blue-dark);
-  border-color: var(--color-blue-dark);
+  background: var(--color-violet-dark);
+  border-color: var(--color-violet-dark);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(var(--glass-blur-sm));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+  color: var(--apple-purple);
+  border: 1px solid rgba(124, 58, 237, 0.25);
 }
 
 .btn-outline:hover {
-  border-color: var(--color-text);
-  background: var(--color-bg-elevated);
+  border-color: var(--apple-purple);
+  background: rgba(124, 58, 237, 0.08);
 }
 
 .btn-accent {
-  background: var(--color-orange);
+  background: var(--apple-purple);
   color: var(--color-white);
-  border-color: var(--color-orange);
+  border-color: var(--apple-purple);
 }
 
 .btn-accent:hover {
-  background: var(--color-orange-dark);
-  border-color: var(--color-orange-dark);
+  background: var(--color-violet-dark);
+  border-color: var(--color-violet-dark);
 }
 
 .page-enter {
@@ -210,14 +213,14 @@ ul {
 .page-badge {
   display: inline-block;
   padding: 0.4rem 0.85rem;
-  border-radius: 0;
+  border-radius: 980px;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  color: var(--color-orange);
-  background: var(--color-orange-light);
-  border: 1px solid var(--color-orange);
+  color: var(--apple-purple);
+  background: var(--color-violet-light);
+  border: 1px solid rgba(124, 58, 237, 0.2);
   margin-bottom: 1.15rem;
 }
 

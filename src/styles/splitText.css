@@ -30,20 +30,23 @@ h1.split-text .split-space,
 .split-line {
   display: block;
   overflow: hidden;
-  line-height: inherit;
+  line-height: 1.12;
+  padding-bottom: 0.1em;
 }
 
 .split-line-mask {
   display: block;
-  overflow: hidden;
+  overflow: visible;
   line-height: inherit;
+  will-change: transform;
 }
 
 .split-mask {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  line-height: inherit;
+  line-height: 1.12;
+  padding-bottom: 0.08em;
 }
 
 .split-word,
@@ -99,7 +102,12 @@ h1.split-text .split-space,
 
 .premium-display.split-text .split-line-mask,
 .premium-display.split-text .split-word {
-  color: #0a0a0a;
+  color: var(--color-text);
+}
+
+.hero-apple-headline.split-text .split-line-mask,
+.hero-apple-headline.split-text .split-word {
+  color: var(--color-text);
 }
 
 .premium-statement-sub.split-text .split-line-mask,

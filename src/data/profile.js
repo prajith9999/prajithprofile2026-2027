@@ -6,6 +6,7 @@ export const profile = {
   email: 'prajith96ns@gmail.com',
   phone: '(+974) 77843003',
   linkedin: 'https://linkedin.com/in/prajith-ns-b3b202190',
+  github: 'https://github.com/prajith96ns',
   address: 'Barwa, Doha, Qatar 91477',
   workPermit: 'Qatari',
   placeOfBirth: 'Kerala, India',

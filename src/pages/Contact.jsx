@@ -49,7 +49,7 @@ export default function Contact() {
               {[
                 { icon: 'envelope', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
                 { icon: 'phone', label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
-                { icon: 'briefcase', label: 'LinkedIn', value: 'prajith-ns-b3b202190', href: profile.linkedin },
+                { icon: 'briefcase', label: 'LinkedIn', value: 'prajith-ns-b3b202190', href: profile.linkedin, external: true },
                 { icon: 'mapPin', label: 'Address', value: profile.address },
               ].map((item) => (
                 <div key={item.label} className="contact-detail box">
@@ -59,7 +59,12 @@ export default function Contact() {
                   <div>
                     <span className="contact-detail-label">{item.label}</span>
                     {item.href ? (
-                      <a href={item.href} target={item.label === 'LinkedIn' ? '_blank' : undefined} rel="noopener noreferrer" className="contact-detail-value contact-link">
+                      <a
+                        href={item.href}
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noopener noreferrer' : undefined}
+                        className="contact-detail-value contact-link"
+                      >
                         {item.value}
                       </a>
                     ) : (

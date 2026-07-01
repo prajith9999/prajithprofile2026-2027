@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { profile } from '../data/profile';
 import { onlineClasses } from '../data/classes';
 import { scrollToHash, scrollToHero } from '../utils/scroll';
+import AppIcon from './AppIcon';
 import Logo from './Logo';
 import './Footer.css';
 
@@ -114,6 +115,9 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
           <div className="footer-social">
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <AppIcon name="github" size={18} />
+            </a>
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
             <a href={`mailto:${profile.email}`} aria-label="Email">@</a>
             <a href={`tel:${profile.phone.replace(/\s/g, '')}`} aria-label="Phone">☎</a>

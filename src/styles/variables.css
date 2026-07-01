@@ -1,59 +1,73 @@
 :root {
-  /* Mosh-inspired dark palette */
+  /* Apple iPad Air — premium light palette */
   --color-white: #ffffff;
-  --color-bg: #0c0c0c;
-  --color-bg-elevated: #111111;
-  --color-bg-card: #161616;
-  --color-bg-footer: #080808;
-  --color-border: #2a2a2a;
-  --color-border-hover: #3d3d3d;
+  --color-bg: #fbfbfd;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-footer: #f5f5f7;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.14);
 
   /* Text */
-  --color-text: #ffffff;
-  --color-text-muted: rgba(255, 255, 255, 0.72);
-  --color-text-subtle: rgba(255, 255, 255, 0.5);
+  --color-text: #1d1d1f;
+  --color-text-muted: #6e6e73;
+  --color-text-subtle: #86868b;
 
-  /* Accents — violet + green (unified premium palette) */
-  --color-violet: #8b5cf6;
-  --color-violet-dark: #7c3aed;
-  --color-violet-light: rgba(139, 92, 246, 0.15);
-  --color-green: #22c55e;
-  --color-green-dark: #16a34a;
-  --color-green-light: rgba(34, 197, 94, 0.15);
+  /* iPad Air finish colors */
+  --apple-blue: #0071e3;
+  --apple-blue-light: #2997ff;
+  --apple-purple: #7c3aed;
+  --apple-purple-light: #a78bfa;
+  --apple-space-gray: #424245;
+  --apple-space-gray-light: #86868b;
+  --apple-starlight: #e8e0d4;
+  --apple-starlight-warm: #f5f0e8;
+
+  /* Accents */
+  --color-violet: var(--apple-purple);
+  --color-violet-dark: #6d28d9;
+  --color-violet-light: rgba(124, 58, 237, 0.12);
+  --color-green: #34c759;
+  --color-green-dark: #248a3d;
+  --color-green-light: rgba(52, 199, 89, 0.12);
   --color-rose: var(--color-green);
   --color-rose-dark: var(--color-green-dark);
   --color-rose-light: var(--color-green-light);
-  --color-gradient-start: #8b5cf6;
-  --color-gradient-mid: #a855f7;
-  --color-gradient-end: #22c55e;
-  --color-gradient-soft: #4ade80;
-
-  /* Legacy compat — maps old blue/orange tokens to new palette */
-  --color-blue: var(--color-violet);
-  --color-blue-dark: var(--color-violet-dark);
-  --color-blue-light: var(--color-violet-light);
-  --color-orange: var(--color-green);
-  --color-orange-dark: var(--color-green-dark);
-  --color-orange-light: var(--color-green-light);
+  --color-gradient-start: var(--apple-blue);
+  --color-gradient-mid: var(--apple-purple);
+  --color-gradient-end: var(--apple-purple-light);
+  --color-gradient-soft: var(--apple-blue-light);
 
   /* Legacy compat */
+  --color-blue: var(--apple-blue);
+  --color-blue-dark: #0077ed;
+  --color-blue-light: rgba(0, 113, 227, 0.12);
+  --color-orange: var(--apple-purple);
+  --color-orange-dark: var(--color-violet-dark);
+  --color-orange-light: var(--color-violet-light);
   --color-black: var(--color-text);
   --color-background: var(--color-bg);
   --color-coffee: var(--color-text-muted);
-  --color-coffee-dark: #0a0a0a;
+  --color-coffee-dark: #1d1d1f;
   --color-coffee-light: var(--color-text-muted);
   --color-primary-dark: var(--color-text);
   --color-primary: var(--color-text-muted);
-  --color-accent: var(--color-green);
-  --color-link: var(--color-violet);
+  --color-accent: var(--apple-blue);
+  --color-link: var(--apple-blue);
   --color-footer-bg: var(--color-bg-footer);
-  --color-ash: #2a2a2a;
-  --color-ash-dark: #404040;
-  --color-ash-light: rgba(255, 255, 255, 0.06);
-  --color-ash-darker: #1a1a1a;
+  --color-ash: #d2d2d7;
+  --color-ash-dark: #86868b;
+  --color-ash-light: rgba(0, 0, 0, 0.04);
+  --color-ash-darker: #e8e8ed;
 
-  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-weight-thin: 100;
+  /* Card color fills — iPad Air finishes */
+  --card-blue: linear-gradient(145deg, #0071e3 0%, #2997ff 55%, #64b5f6 100%);
+  --card-purple: linear-gradient(145deg, #6d28d9 0%, #8b5cf6 55%, #c4b5fd 100%);
+  --card-gray: linear-gradient(145deg, #3a3a3c 0%, #636366 55%, #86868b 100%);
+  --card-starlight: linear-gradient(145deg, #d4c4b0 0%, #e8e0d4 55%, #f5f0e8 100%);
+
+  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Segoe UI', sans-serif;
+  --font-weight-thin: 200;
   --font-weight-extralight: 200;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -62,66 +76,64 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 700;
 
-  /* Type scale — classic professional */
-  --font-size-xs: 0.8125rem;
-  --font-size-sm: 0.9375rem;
+  /* Type scale — Apple-style hierarchy */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
   --font-size-base: 1.0625rem;
   --font-size-md: 1.125rem;
-  --font-size-lg: 1.25rem;
+  --font-size-lg: 1.3125rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
   --font-size-3xl: 2.75rem;
-  --font-size-display: clamp(2.5rem, 6vw, 4.5rem);
+  --font-size-display: clamp(2.75rem, 7vw, 5rem);
 
-  /* Type scale */
-  --leading-tight: 1.2;
-  --leading-snug: 1.4;
-  --leading-normal: 1.65;
-  --leading-relaxed: 1.8;
-  --tracking-tight: -0.02em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.06em;
-  --tracking-wider: 0.12em;
-  --tracking-h1: 0.02em;
+  --leading-tight: 1.12;
+  --leading-snug: 1.25;
+  --leading-normal: 1.47059;
+  --leading-relaxed: 1.6;
+  --tracking-tight: -0.025em;
+  --tracking-normal: -0.01em;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-h1: -0.03em;
 
-  /* Square design — no rounded corners */
-  --radius-sm: 0;
-  --radius-md: 0;
-  --radius-lg: 0;
-  --radius-xl: 0;
+  /* Rounded — Apple Liquid Glass */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
 
-  --transition: 0.2s ease;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --header-utility-height: 2.25rem;
-  --header-brand-height: 3.5rem;
+  --header-brand-height: 3.25rem;
   --header-nav-height: 2.75rem;
   --header-height: calc(var(--header-utility-height) + var(--header-brand-height) + var(--header-nav-height));
-  --container-max: 1140px;
+  --container-max: 980px;
 
-  /* Section spacing */
-  --section-padding-y: 7rem;
-  --section-padding-y-lg: 8.5rem;
-  --page-hero-padding-top: 5.5rem;
-  --page-hero-padding-bottom: 4rem;
-  --hero-padding-top: 9rem;
-  --hero-padding-bottom: 7rem;
-  --card-padding: 2.75rem;
-  --card-padding-lg: 3.25rem;
-  --stat-padding-y: 3.25rem;
+  --section-padding-y: 5.5rem;
+  --section-padding-y-lg: 7rem;
+  --page-hero-padding-top: 4.5rem;
+  --page-hero-padding-bottom: 3.5rem;
+  --hero-padding-top: 7rem;
+  --hero-padding-bottom: 5.5rem;
+  --card-padding: 2rem;
+  --card-padding-lg: 2.5rem;
+  --stat-padding-y: 2.5rem;
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.035);
-  --glass-bg-elevated: rgba(255, 255, 255, 0.06);
-  --glass-bg-strong: rgba(255, 255, 255, 0.09);
-  --glass-dark-bg: rgba(0, 0, 0, 0.45);
-  --glass-light-bg: rgba(235, 232, 227, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-border-hover: rgba(255, 255, 255, 0.16);
-  --glass-border-subtle: rgba(255, 255, 255, 0.05);
-  --glass-light-border: rgba(255, 255, 255, 0.35);
-  --glass-blur-sm: 12px;
-  --glass-blur: 18px;
-  --glass-blur-lg: 24px;
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
-  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.34);
-  --glass-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  /* Glassmorphism — Liquid Glass on light */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.78);
+  --glass-bg-strong: rgba(255, 255, 255, 0.88);
+  --glass-dark-bg: rgba(29, 29, 31, 0.88);
+  --glass-light-bg: rgba(251, 251, 253, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-border-hover: rgba(255, 255, 255, 0.75);
+  --glass-border-subtle: rgba(0, 0, 0, 0.06);
+  --glass-light-border: rgba(255, 255, 255, 0.6);
+  --glass-blur-sm: 16px;
+  --glass-blur: 24px;
+  --glass-blur-lg: 40px;
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --glass-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
