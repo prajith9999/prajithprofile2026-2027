@@ -32,9 +32,9 @@ export default function About() {
               <p key={index} className="about-text">{paragraph}</p>
             ))}
           </div>
-          <div className="about-stats box">
+          <div className="about-stats">
             {stats.map((stat) => (
-              <div key={stat.label} className="about-stat">
+              <div key={stat.label} className="about-stat box">
                 <span className="about-stat-value">{stat.value}</span>
                 <span className="about-stat-label">{stat.label}</span>
               </div>
@@ -48,9 +48,6 @@ export default function About() {
           <div className="section-header">
             <span className="section-label">Journey</span>
             <h2 className="section-title">Professional Story</h2>
-            <p className="section-subtitle">
-              Key chapters from my career — from hands-on development to cloud architecture in Qatar.
-            </p>
           </div>
         </div>
         <div className="story-list">
@@ -61,10 +58,8 @@ export default function About() {
             >
               <div className="story-image">
                 <img src={story.image} alt={story.title} loading="lazy" />
-                <span className="story-image-badge">{story.label}</span>
               </div>
               <div className={`story-content story-content--${story.theme}`}>
-                <span className="story-label">{story.label}</span>
                 <h3>{story.title}</h3>
                 <p>{story.text}</p>
               </div>

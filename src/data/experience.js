@@ -66,8 +66,8 @@ export const experience = [
 ];
 
 export const education = {
-  degree: 'MCA',
-  institution: 'Brindavan College',
-  location: 'Bangalore',
+  degree: 'Master of Computer Application (MCA)',
+  institution: 'Brindavan College of Engineering, Bangalore',
+  location: 'Bangalore 560077',
   year: '2024',
 };

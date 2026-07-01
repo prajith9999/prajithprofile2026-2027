@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import AppIcon from './AppIcon';
 import { profile } from '../data/profile';
 import './Header.css';
@@ -13,9 +13,23 @@ const navLinks = [
   { to: '/achievements', label: 'Certifications', icon: 'trophy' },
 ];
 
+function isNavLinkActive(link, location) {
+  if (link.hash) {
+    return location.pathname === link.to && location.hash === link.hash;
+  }
+  if (link.to === '/') {
+    return location.pathname === '/' && !location.hash;
+  }
+  if (link.to === '/achievements') {
+    return location.pathname === '/achievements' && location.hash !== '#projects';
+  }
+  return location.pathname === link.to;
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     let ticking = false;
@@ -70,7 +84,7 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
       {menuOpen && (
         <button
           type="button"
@@ -152,29 +166,38 @@ export default function Header() {
               <AppIcon name="mapPin" size={16} />
               <span>{profile.title} · {profile.location}</span>
             </div>
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.label}
-                to={link.hash ? { pathname: link.to, hash: link.hash } : link.to}
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            <ul className="nav-list">
+              {navLinks.map((link) => (
+                <li key={link.label} className="nav-list-item">
+                  <NavLink
+                    to={link.hash ? { pathname: link.to, hash: link.hash } : link.to}
+                    className={() =>
+                      `nav-link ${isNavLinkActive(link, location) ? 'active' : ''}`
+                    }
+                    onClick={closeMenu}
+                  >
+                    <AppIcon name={link.icon} size={18} />
+                    <span>{link.label}</span>
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            <div className="nav-mobile-actions">
+              <Link
+                to="/contact"
+                className="nav-mobile-cta btn btn-primary"
                 onClick={closeMenu}
               >
-                <AppIcon name={link.icon} size={16} />
-                <span>{link.label}</span>
-              </NavLink>
-            ))}
-            <div className="nav-mobile-actions">
+                <AppIcon name="envelope" size={18} />
+                Contact
+              </Link>
               <Link
                 to={{ pathname: '/', hash: '#classes' }}
                 className="nav-mobile-link"
                 onClick={closeMenu}
               >
-                <AppIcon name="shoppingBag" size={20} />
+                <AppIcon name="shoppingBag" size={18} />
                 Courses
-              </Link>
-              <Link to="/contact" className="nav-mobile-link" onClick={closeMenu}>
-                <AppIcon name="login" size={20} />
-                Log In
               </Link>
             </div>
           </nav>
