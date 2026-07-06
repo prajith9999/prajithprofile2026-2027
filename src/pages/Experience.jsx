@@ -1,54 +1,36 @@
 import { experience } from '../data/experience';
-import AppIcon from '../components/AppIcon';
 import './Experience.css';
 
 export default function Experience() {
   return (
-    <div className="page-enter">
-      <section id="hero" className="page-hero">
-        <div className="container">
-          <span className="page-badge">Work History</span>
-          <h1 className="page-title split-text" data-split="lines" data-split-on="load">Work Experience</h1>
-          <p className="page-description">
-            4+ years of IT experience across software development, cloud engineering,
-            DevOps, and system administration roles.
-          </p>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="experience-timeline">
+    <div className="page-enter experience-page">
+      <section className="experience-showcase section">
+        <div className="experience-showcase-shell">
+          <div className="experience-grid">
             {experience.map((job) => (
-              <article key={job.id} className="experience-card">
-                <div className="experience-content">
-                  <div className="experience-header">
-                    <div>
-                      <h3>{job.title}</h3>
-                      <span className="experience-company">{job.company}</span>
-                    </div>
-                    <div className="experience-meta">
-                      <span className="experience-period">{job.period}</span>
-                      <span className={`experience-type type-${job.type.toLowerCase().replace(/\s/g, '-')}`}>
-                        {job.type}
-                      </span>
-                    </div>
+              <article key={job.id} className="experience-card experience-card-item">
+                <div className="experience-card-copy">
+                  <div className="experience-card-top">
+                    <span className="experience-card-type">{job.type}</span>
+                    <span className="experience-card-period">{job.period}</span>
                   </div>
-                  <span className="experience-location">
-                    <AppIcon name="mapPin" size={16} />
-                    {job.location}
-                  </span>
+                  <h2 className="experience-card-title">{job.title}</h2>
+                  <p className="experience-card-tagline">{job.tagline}</p>
+                  <p className="experience-card-company">
+                    {job.company} · {job.location}
+                  </p>
                   <ul className="experience-highlights">
-                    {job.highlights.map((item) => (
-                      <li key={item}>
-                        <span className="highlight-check">
-                          <AppIcon name="check" size={14} />
-                        </span>
-                        {item}
-                      </li>
+                    {job.highlights.slice(0, 4).map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
+                  <span className="experience-card-cta">Discover</span>
                 </div>
+                <div
+                  className="experience-card-panel"
+                  style={{ background: job.gradient }}
+                  aria-hidden="true"
+                />
               </article>
             ))}
           </div>

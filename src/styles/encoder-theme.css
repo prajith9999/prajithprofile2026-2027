@@ -1,0 +1,52 @@
+/* encoder.digital-inspired — Haas grotesk type + full black canvas */
+
+html,
+body,
+#root,
+.main-content,
+.home-page {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+h1,
+.page-title,
+.hero-apple-headline,
+.premium-gradient-headline,
+.premium-display,
+.section-title,
+.philosophy-headline {
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-h1);
+}
+
+h2 {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+p,
+.page-description,
+.section-subtitle,
+.hero-apple-body {
+  font-weight: var(--font-weight-regular);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section-label,
+.page-badge {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.hero-apple-hello {
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-h1);
+  text-transform: none;
+}
+
+.nav-link {
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-normal);
+}

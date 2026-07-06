@@ -1,0 +1,340 @@
+/* Inner pages — pure black + warm grain gradient + dark glass (not Home) */
+
+html.site-theme-inner {
+  background-color: transparent;
+}
+
+html.site-theme-inner body {
+  background-color: transparent;
+  color: #f5f5f7;
+}
+
+.site-layout--inner {
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+  background-image: none;
+  --color-text: #f5f5f7;
+  --color-text-muted: rgba(245, 245, 247, 0.68);
+  --color-text-subtle: rgba(245, 245, 247, 0.48);
+  --color-bg: #000000;
+  --color-bg-elevated: rgba(255, 255, 255, 0.04);
+  --color-bg-card: rgba(255, 255, 255, 0.06);
+  --color-bg-footer: #000000;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.18);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-border-subtle: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-hover: rgba(255, 255, 255, 0.28);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --glass-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --color-blue-light: rgba(0, 113, 227, 0.18);
+  --color-violet-light: rgba(227, 30, 36, 0.18);
+}
+
+.site-layout--inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.main-content--inner {
+  background: transparent;
+  color: #f5f5f7;
+}
+
+.site-layout--inner .page-hero {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+.site-layout--inner .page-hero .container {
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--glass-shadow);
+}
+
+.site-layout--inner .section {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+.site-layout--inner .page-title,
+.site-layout--inner .section-title,
+.site-layout--inner .page-title.split-text .split-word,
+.site-layout--inner .page-title.split-text .split-line-mask,
+.site-layout--inner .section-title.split-text .split-word,
+.site-layout--inner .section-title.split-text .split-line-mask,
+.site-layout--inner .values-hero-title.split-text .split-word,
+.site-layout--inner .values-hero-title.split-text .split-line-mask {
+  color: #ffffff;
+}
+
+.site-layout--inner .page-description,
+.site-layout--inner .section-subtitle,
+.site-layout--inner .about-text,
+.site-layout--inner .contact-text,
+.site-layout--inner .table-scroll-hint {
+  color: rgba(245, 245, 247, 0.68);
+}
+
+.site-layout--inner .section-label {
+  color: var(--apple-purple-light);
+}
+
+.site-layout--inner .page-badge {
+  color: var(--apple-purple-light);
+  background: rgba(227, 30, 36, 0.15);
+  border-color: rgba(227, 30, 36, 0.35);
+}
+
+/* Dark glass cards */
+.site-layout--inner .box,
+.site-layout--inner .glass,
+.site-layout--inner .timeline-card,
+.site-layout--inner .contact-form,
+.site-layout--inner .contact-detail,
+.site-layout--inner .education-card,
+.site-layout--inner .about-stat,
+.site-layout--inner .achievement-stat,
+.site-layout--inner .project-card,
+.site-layout--inner .languages-table-wrapper,
+.site-layout--inner .values-strength-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--glass-shadow);
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.site-layout--inner .box:hover,
+.site-layout--inner .timeline-card:hover,
+.site-layout--inner .about-stat:hover,
+.site-layout--inner .values-strength-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.site-layout--inner .achievement-stat-value,
+.site-layout--inner .about-stat-value,
+.site-layout--inner .timeline-card h3,
+.site-layout--inner .contact-form h3,
+.site-layout--inner .contact-detail-value,
+.site-layout--inner .education-simple h3,
+.site-layout--inner .project-card-body h3 {
+  color: #ffffff;
+}
+
+.site-layout--inner .achievement-stat-label,
+.site-layout--inner .about-stat-label,
+.site-layout--inner .timeline-card p,
+.site-layout--inner .timeline-org,
+.site-layout--inner .project-card-body p,
+.site-layout--inner .project-tag,
+.site-layout--inner .timeline-mode {
+  color: rgba(245, 245, 247, 0.65);
+}
+
+.site-layout--inner .timeline-year {
+  color: var(--apple-purple-light);
+  border-color: rgba(167, 139, 250, 0.45);
+}
+
+.site-layout--inner .timeline-mode {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.site-layout--inner .education-institution {
+  color: var(--apple-purple-light);
+}
+
+.site-layout--inner .education-location {
+  color: rgba(245, 245, 247, 0.65);
+}
+
+.site-layout--inner .education-period {
+  color: var(--apple-blue-light);
+  border-color: rgba(41, 151, 255, 0.45);
+}
+
+.site-layout--inner .project-period {
+  color: var(--apple-blue-light);
+  border-color: rgba(41, 151, 255, 0.45);
+}
+
+.site-layout--inner .project-tag {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.site-layout--inner .contact-detail-label {
+  color: var(--apple-purple-light);
+}
+
+.site-layout--inner .languages-table th {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-layout--inner .languages-table td {
+  color: rgba(245, 245, 247, 0.68);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-layout--inner .lang-name {
+  color: #ffffff;
+}
+
+.site-layout--inner .lang-level {
+  color: var(--apple-blue-light);
+  border-color: rgba(41, 151, 255, 0.35);
+}
+
+.site-layout--inner .timeline,
+.site-layout--inner .achievement-stats,
+.site-layout--inner .contact-details {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.site-layout--inner .timeline-icon,
+.site-layout--inner .contact-detail-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--apple-blue-light);
+}
+
+.site-layout--inner .personal-label {
+  color: var(--apple-purple-light);
+}
+
+.site-layout--inner .personal-value {
+  color: #f5f5f7;
+}
+
+.site-layout--inner .form-group label {
+  color: rgba(245, 245, 247, 0.62);
+}
+
+.site-layout--inner .form-group input,
+.site-layout--inner .form-group select,
+.site-layout--inner .form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.site-layout--inner .form-group input:focus,
+.site-layout--inner .form-group select:focus,
+.site-layout--inner .form-group textarea:focus {
+  border-color: var(--apple-purple-light);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-layout--inner .form-group input::placeholder,
+.site-layout--inner .form-group textarea::placeholder {
+  color: rgba(245, 245, 247, 0.35);
+}
+
+.site-layout--inner .contact-link {
+  color: var(--apple-blue-light);
+}
+
+.site-layout--inner .contact-link:hover {
+  color: var(--apple-purple-light);
+}
+
+.site-layout--inner .footer {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f5f5f7;
+}
+
+.site-layout--inner .footer-heading {
+  color: #ffffff;
+}
+
+.site-layout--inner .footer-tagline,
+.site-layout--inner .footer-col a,
+.site-layout--inner .footer-copy {
+  color: rgba(245, 245, 247, 0.62);
+}
+
+.site-layout--inner .experience-page {
+  background: transparent;
+}
+
+.site-layout--inner .values-hero {
+  background: transparent;
+}
+
+.site-layout--inner .gallery-section,
+.site-layout--inner .projects-section {
+  background: transparent;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-layout--inner .form-success {
+  background: rgba(0, 113, 227, 0.12);
+  border-color: rgba(0, 113, 227, 0.35);
+  color: var(--apple-blue-light);
+}
+
+.site-layout--inner .story-section {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-layout--inner .story-row {
+  background: transparent;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-layout--inner .inner-reveal {
+  will-change: transform, opacity;
+}
+
+/* ─── Inner pages — mobile & tablet ─── */
+@media (max-width: 900px) {
+  .site-layout--inner {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-layout--inner .page-hero .container {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .site-layout--inner .page-hero {
+    min-height: auto;
+  }
+
+  .site-layout--inner .footer-col ul li a,
+  .site-layout--inner .footer-col ul li {
+    text-decoration-color: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-layout--inner .page-hero .container {
+    padding: 1.25rem 1rem;
+  }
+}

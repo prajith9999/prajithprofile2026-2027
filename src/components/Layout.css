@@ -5,6 +5,15 @@
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.site-layout > *:not(.bg-gradient-scene) {
+  position: relative;
+  z-index: 1;
 }
 
 .main-content {
@@ -12,10 +21,6 @@
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  background-color: var(--color-bg);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 113, 227, 0.07), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(124, 58, 237, 0.06), transparent 50%),
-    radial-gradient(ellipse 55% 35% at 10% 80%, rgba(232, 224, 212, 0.35), transparent 55%);
-  background-attachment: fixed;
+  background-color: transparent;
+  background-image: none;
 }

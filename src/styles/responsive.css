@@ -22,7 +22,7 @@ html {
 
 @media (max-width: 900px) {
   :root {
-    --header-height: var(--header-brand-height);
+    --header-height: 2.75rem;
   }
 
   html {
@@ -41,6 +41,7 @@ html {
     --card-padding: 1.5rem;
     --card-padding-lg: 1.75rem;
     --stat-padding-y: 1.75rem;
+    --container-max: 100%;
   }
 
   body {
@@ -119,6 +120,13 @@ html {
     --card-padding: 1.25rem;
     --card-padding-lg: 1.5rem;
     --stat-padding-y: 1.5rem;
+    --page-hero-padding-top: 2.25rem;
+    --page-hero-padding-bottom: 2rem;
+  }
+
+  .container {
+    padding-left: max(0.875rem, env(safe-area-inset-left));
+    padding-right: max(0.875rem, env(safe-area-inset-right));
   }
 
   .section-title {

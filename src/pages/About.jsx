@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import AppIcon from '../components/AppIcon';
 import { profile, summary, stats } from '../data/profile';
 import { education } from '../data/experience';
 import { stories } from '../data/stories';
@@ -15,7 +17,6 @@ export default function About() {
     <div className="page-enter">
       <section id="hero" className="page-hero">
         <div className="container">
-          <span className="page-badge">About Me</span>
           <h1 className="page-title split-text" data-split="lines" data-split-on="load">My Story</h1>
           <p className="page-description">
             Software Engineer based in {profile.location} — a journey through development,
@@ -87,17 +88,58 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section values-section">
-        <div className="container">
-          <h2 className="section-title">Professional Strengths</h2>
-          <p className="section-subtitle">The qualities that define my approach to engineering.</p>
-          <div className="values-grid">
+      <section className="values-hero section">
+        <div className="values-hero-shell">
+          <div className="values-hero-headline">
+            <h2
+              className="values-hero-title values-hero-title--left split-text"
+              data-split="lines"
+              data-scrub="false"
+            >
+              Professional
+            </h2>
+            <div className="values-hero-spine" aria-hidden="true" />
+            <h2
+              className="values-hero-title values-hero-title--right split-text"
+              data-split="lines"
+              data-scrub="false"
+            >
+              Strengths
+            </h2>
+          </div>
+
+          <div className="values-hero-cards">
             {strengths.map((item) => (
-              <div key={item.title} className="value-card box">
+              <article key={item.title} className="value-card values-strength-card">
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
-              </div>
+              </article>
             ))}
+          </div>
+
+          <div className="values-hero-bottom">
+            <div className="values-hero-bottom-col">
+              <p className="values-hero-eyebrow">Engineering excellence</p>
+              <p className="values-hero-lead">
+                The qualities that define my approach to building secure,
+                scalable, production-ready systems.
+              </p>
+            </div>
+            <div className="values-hero-bottom-col values-hero-bottom-col--center">
+              <Link to="/experience" className="values-hero-cta">
+                View Experience
+              </Link>
+              <Link to="/experience" className="values-hero-cta-arrow" aria-label="View Experience">
+                <AppIcon name="chevronRight" size={18} />
+              </Link>
+            </div>
+            <div className="values-hero-bottom-col values-hero-bottom-col--right">
+              <AppIcon name="mapPin" size={18} />
+              <div>
+                <span className="values-hero-location-label">Based in</span>
+                <span className="values-hero-location">{profile.location}</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

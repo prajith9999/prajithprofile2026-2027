@@ -64,7 +64,7 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  text-decoration-color: rgba(0, 0, 0, 0.18);
+  text-decoration-color: rgba(255, 255, 255, 0.22);
 }
 
 .footer-col a:hover {

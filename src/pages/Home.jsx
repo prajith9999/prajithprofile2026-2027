@@ -14,31 +14,23 @@ export default function Home() {
   return (
     <div className="page-enter home-page">
       <section id="hero" className="hero-apple" aria-label="Introduction">
-        <div className="hero-apple-bg" aria-hidden="true">
-          <span className="hero-apple-orb hero-apple-orb--blue" />
-          <span className="hero-apple-orb hero-apple-orb--purple" />
-          <span className="hero-apple-orb hero-apple-orb--starlight" />
-        </div>
         <div className="container hero-apple-inner">
-          <p className="hero-apple-eyebrow split-text" data-split="words" data-scrub="false">
-            {profile.title} · {profile.location}
+          <p className="hero-apple-hello split-text" data-split="lines">
+            Hey there
           </p>
-          <h1
-            className="hero-apple-headline split-text"
-            data-split="lines"
-            data-split-on="load"
-          >
-            Engineered.
+          <h1 className="hero-apple-headline split-text" data-split="lines">
+            I&apos;m Prajith. Your go-to engineer for scalable digital products.
           </h1>
-          <p className="hero-apple-tagline split-text" data-split="lines" data-scrub="false">
-            Built for scale. Delivered with precision.
+          <p className="hero-apple-body split-text" data-split="lines">
+            {profile.title} based in {profile.location} — .NET Full Stack, cloud, and DevOps
+            with a focus on secure, production-ready delivery.
           </p>
           <div className="hero-apple-actions gsap-reveal-item">
             <Link to="/experience" className="hero-apple-cta hero-apple-cta--primary">
               View Experience
             </Link>
             <Link to="/contact" className="hero-apple-cta hero-apple-cta--ghost">
-              Get in Touch
+              Say Hello
             </Link>
           </div>
         </div>
@@ -52,14 +44,14 @@ export default function Home() {
           <h1
             className="premium-gradient-headline split-text"
             data-split="lines"
-            data-split-on="load"
+            data-scrub="true"
           >
             Enterprise Engineering.
           </h1>
           <p
             className="premium-statement-sub split-text"
             data-split="lines"
-            data-scrub="false"
+            data-scrub="true"
           >
             Built for scale. Delivered with precision.
           </p>
@@ -109,7 +101,7 @@ export default function Home() {
       <section className="premium-slide">
         <div className="premium-slide-panel">
           <div className="premium-visual-copy">
-            <h2 className="premium-display split-text" data-split="lines" data-scrub="false">
+            <h2 className="premium-display split-text" data-split="lines" data-scrub="true">
               Engineer Anything.
             </h2>
             <p className="premium-visual-text gsap-reveal-item">
@@ -159,7 +151,7 @@ export default function Home() {
             <div className="skills-header-accent skills-header-item" aria-hidden="true" />
             <div className="skills-header-copy">
               <span className="section-label skills-header-item">Core Stack</span>
-              <h2 className="section-title skills-header-item split-text" data-split="lines" data-scrub="false">
+              <h2 className="section-title skills-header-item split-text" data-split="lines" data-scrub="true">
                 Technical Expertise
               </h2>
               <p className="section-subtitle skills-header-item skills-subtitle">
@@ -168,10 +160,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="skills-divider" aria-hidden="true" />
+        </div>
+        <div className="skills-showcase">
           <div className="skills-grid">
-            {skillCategories.map((skill, index) => (
-              <SkillCard key={skill.id} skill={skill} showImage={false} index={index + 1} />
+            {skillCategories.map((skill) => (
+              <SkillCard key={skill.id} skill={skill} />
             ))}
           </div>
         </div>
@@ -183,7 +176,7 @@ export default function Home() {
             <div className="classes-header-accent" aria-hidden="true" />
             <div className="classes-header-copy">
               <span className="section-label">Training Programs</span>
-              <h2 className="section-title split-text" data-split="lines" data-scrub="false">Online Classes</h2>
+              <h2 className="section-title split-text" data-split="lines" data-scrub="true">Online Classes</h2>
               <p className="section-subtitle classes-subtitle">
                 Live online sessions in .NET Full Stack, cloud engineering,
                 and system administration with networking and Linux.
@@ -193,11 +186,15 @@ export default function Home() {
               <AppIcon name="academic" size={40} />
             </div>
           </div>
+        </div>
+        <div className="classes-showcase">
           <div className="classes-grid">
             {onlineClasses.map((course) => (
               <ClassCard key={course.id} course={course} />
             ))}
           </div>
+        </div>
+        <div className="container">
           <div className="classes-cta">
             <p>Interested in enrolling or custom corporate training?</p>
             <Link to="/contact" className="btn btn-primary">Enquire About Classes</Link>

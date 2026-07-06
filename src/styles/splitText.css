@@ -4,6 +4,7 @@
 .is-split {
   font-kerning: normal;
   text-rendering: optimizeLegibility;
+  word-spacing: -0.02em;
 }
 
 h1.split-text,
@@ -11,27 +12,28 @@ h1.split-text .split-word,
 h1.split-text .split-char,
 h1.split-text .split-line,
 h1.split-text .split-line-mask,
-h1.split-text .split-space,
 .page-title.split-text,
 .page-title.split-text .split-word,
 .page-title.split-text .split-char,
 .page-title.split-text .split-line,
 .page-title.split-text .split-line-mask,
-.page-title.split-text .split-space,
 .premium-gradient-headline.split-text,
 .premium-gradient-headline.split-text .split-word,
 .premium-gradient-headline.split-text .split-char,
 .premium-gradient-headline.split-text .split-line,
-.premium-gradient-headline.split-text .split-line-mask,
-.premium-gradient-headline.split-text .split-space {
+.premium-gradient-headline.split-text .split-line-mask {
   letter-spacing: var(--tracking-h1);
+}
+
+.split-text .split-space {
+  letter-spacing: 0 !important;
 }
 
 .split-line {
   display: block;
   overflow: hidden;
-  line-height: 1.12;
-  padding-bottom: 0.1em;
+  line-height: 1.05;
+  padding-bottom: 0.04em;
 }
 
 .split-line-mask {
@@ -39,14 +41,16 @@ h1.split-text .split-space,
   overflow: visible;
   line-height: inherit;
   will-change: transform;
+  letter-spacing: inherit;
 }
 
 .split-mask {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  line-height: 1.12;
-  padding-bottom: 0.08em;
+  line-height: 1.05;
+  padding-bottom: 0.04em;
+  margin-right: -0.07em;
 }
 
 .split-word,
@@ -54,11 +58,17 @@ h1.split-text .split-space,
   display: inline-block;
   will-change: transform, opacity;
   line-height: inherit;
+  letter-spacing: inherit;
 }
 
 .split-space {
-  display: inline;
-  white-space: pre;
+  display: inline-block;
+  width: 0.24em;
+  overflow: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  letter-spacing: 0 !important;
+  margin-right: -0.07em;
 }
 
 .premium-gradient-headline.split-text .split-word,

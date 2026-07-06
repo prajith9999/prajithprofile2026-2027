@@ -6,6 +6,7 @@ import {
   BriefcaseIcon,
   ChartBarIcon,
   CheckIcon,
+  ChevronRightIcon,
   CircleStackIcon,
   ClipboardDocumentCheckIcon,
   CloudIcon,
@@ -79,6 +80,7 @@ const ICONS = {
   login: ArrowRightOnRectangleIcon,
   trophy: TrophyIcon,
   arrowUp: ArrowUpSolidIcon,
+  chevronRight: ChevronRightIcon,
   github: GitHubIcon,
 };
 

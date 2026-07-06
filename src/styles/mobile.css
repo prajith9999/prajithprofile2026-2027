@@ -5,8 +5,17 @@
     background-attachment: scroll;
   }
 
+  .site-layout--inner {
+    background-attachment: scroll;
+  }
+
   .header {
     padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .header-icon-link {
+    width: 44px;
+    min-width: 44px;
   }
 
   .menu-toggle {
@@ -39,24 +48,103 @@
   .about-snippet-text,
   .about-snippet-card,
   .experience-content,
+  .experience-card,
   .contact-detail,
   .contact-form,
-  .value-card,
+  .values-hero,
+  .values-strength-card,
   .personal-card,
   .achievement-stat,
   .timeline-item,
+  .timeline-card,
   .project-card,
+  .education-card,
+  .about-stat,
+  .languages-table-wrapper,
   .premium-statement,
   .premium-split,
   .premium-slide,
   .home-prefooter,
-  .philosophy-slide {
+  .philosophy-slide,
+  .site-layout--inner .page-hero .container {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+
+  .values-hero-shell,
+  .experience-showcase-shell {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .skills-showcase,
+  .classes-showcase {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 }
 
 @media (max-width: 768px) {
+  .hero-apple {
+    min-height: auto;
+    align-items: stretch;
+    padding-bottom: 0;
+  }
+
+  .hero-apple-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1.5rem max(1rem, env(safe-area-inset-left)) 2.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-apple-hello {
+    font-size: clamp(2.35rem, 12vw, 3.25rem);
+    line-height: 1;
+    margin: 0;
+  }
+
+  .hero-apple-headline {
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+    line-height: 1.18;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .hero-apple-body {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .hero-apple-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    visibility: visible;
+  }
+
+  .hero-apple-cta {
+    width: 100%;
+    max-width: none;
+    min-height: 48px;
+  }
+
+  .hero-apple .split-line {
+    line-height: 1.18;
+    padding-bottom: 0.08em;
+  }
+
+  .page-enter {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .premium-gradient-headline {
     font-size: clamp(1.9rem, 8.5vw, 2.75rem);
     line-height: var(--leading-snug);
@@ -96,10 +184,43 @@
     padding: 0.85rem 1.15rem;
   }
 
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .about-content .section-title {
+    font-size: clamp(1.45rem, 6vw, 1.85rem);
+  }
+
+  .values-hero-cta,
+  .values-hero-cta-arrow,
+  .experience-card-cta {
+    min-height: 44px;
+  }
+
+  .values-hero-bottom-col--center {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .experience-card-title {
+    font-size: clamp(1.35rem, 6vw, 1.85rem);
+  }
+
+  .experience-card-copy {
+    padding: 1.25rem 1.15rem;
+  }
+
+  .experience-card-tagline {
+    font-size: 0.88rem;
+  }
+
   .classes-cta .btn,
   .about-snippet-btn,
   .form-submit,
-  .cta-actions .btn {
+  .cta-actions .btn,
+  .values-hero-cta {
     width: 100%;
     justify-content: center;
   }
@@ -137,6 +258,15 @@
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .story-section .section-header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .languages-table-wrapper {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -160,6 +290,18 @@
     scroll-snap-align: start;
   }
 
+  .values-hero-title {
+    font-size: clamp(1.85rem, 9vw, 2.75rem);
+  }
+
+  .values-strength-card {
+    min-height: 0;
+  }
+
+  .values-hero-eyebrow {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
   .home-stats-minimal {
     gap: 0.5rem 0;
   }
@@ -177,19 +319,19 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .timeline-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .header-brand-tagline {
-    font-size: clamp(0.58rem, 2.6vw, 0.68rem);
-    letter-spacing: 0.02em;
-    line-height: 1.3;
-  }
-
-  .header-brand-inner {
-    gap: 0.4rem;
-  }
-
   .premium-split-head .gsap-word {
     font-size: clamp(2rem, 11vw, 2.65rem);
   }
@@ -208,6 +350,52 @@
 
   .about-stats {
     grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .values-hero-shell {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .values-hero-bottom-col--center {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .values-hero-cta-arrow {
+    width: 100%;
+    height: 2.75rem;
+  }
+
+  .experience-showcase {
+    padding-top: 1rem;
+    padding-bottom: var(--section-padding-y);
+  }
+
+  .header-logo {
+    margin-right: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .contact-grid {
+    gap: 1rem;
+  }
+
+  .education-simple h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-tech {
+    gap: 0.25rem;
+  }
+
+  .project-tag {
+    font-size: 0.62rem;
   }
 }
 
@@ -227,5 +415,50 @@
 
   .class-card {
     min-height: 280px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-stat {
+    aspect-ratio: auto;
+    min-height: 120px;
+  }
+
+  .achievement-stat-value {
+    font-size: 1.45rem;
+  }
+
+  .values-hero-spine {
+    width: 56px;
+    height: 160px;
+  }
+
+  .page-title {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+}
+
+/* Touch & interaction polish */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .header-icon-link,
+  .values-hero-cta,
+  .experience-card-cta,
+  .skill-card-expand-btn,
+  .class-card-expand-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .skill-card:hover,
+  .class-card:hover,
+  .about-stat:hover,
+  .timeline-card:hover,
+  .project-card:hover {
+    transform: none;
   }
 }

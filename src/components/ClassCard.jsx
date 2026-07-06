@@ -6,36 +6,31 @@ export default function ClassCard({ course }) {
 
   return (
     <article
-      className={`class-card color-glass-card${isLight ? ' color-glass-card--starlight class-card--light' : ''}`}
+      className={`class-card class-card-item class-card--${isLight ? 'light' : 'dark'}`}
       style={{ background: course.gradient }}
     >
-      <div className="class-card-head color-glass-card__header">
-        <span className="class-icon-wrap">
-          <AppIcon name={course.icon} size={28} />
-        </span>
-        <span className="class-category">{course.category}</span>
-      </div>
-      <div className="class-card-content color-glass-card__body">
-        <h3 className="class-title">{course.title}</h3>
-        <p className="class-description">{course.description}</p>
-        <div className="class-meta">
-          <span className="class-meta-item">
-            <AppIcon name="video" size={16} />
+      <div className="class-card-inner">
+        <span className="class-card-label">{course.category}</span>
+        <h3 className="class-card-title">{course.title}</h3>
+        <p className="class-card-desc">{course.description}</p>
+        <div className="class-card-meta">
+          <span className="class-card-meta-item">
+            <AppIcon name="video" size={15} />
             {course.mode}
           </span>
-          <span className="class-meta-item">
-            <AppIcon name="book" size={16} />
+          <span className="class-card-meta-item">
+            <AppIcon name="book" size={15} />
             {course.duration}
           </span>
         </div>
-        <div className="class-topics">
-          {course.topics.map((topic) => (
-            <span key={topic} className="class-topic">{topic}</span>
-          ))}
+        <div className="class-card-footer">
+          <span className="class-card-expand-btn" aria-label={`View ${course.title}`}>
+            <AppIcon name="chevronRight" size={16} />
+          </span>
         </div>
-        <span className="card-arrow" aria-hidden="true">
-          <AppIcon name="arrowUp" size={18} />
-        </span>
+      </div>
+      <div className="class-card-visual" aria-hidden="true">
+        <AppIcon name={course.icon} size={56} className="class-card-icon" />
       </div>
     </article>
   );

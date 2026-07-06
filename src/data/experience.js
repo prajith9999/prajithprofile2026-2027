@@ -6,6 +6,8 @@ export const experience = [
     location: 'Doha, Qatar',
     period: 'Mar 2026 – Present',
     type: 'Full-Time',
+    tagline: 'Enterprise systems at scale',
+    gradient: 'linear-gradient(160deg, #0071e3 0%, #1d4ed8 45%, #0f172a 100%)',
     highlights: [
       'Designed and developed full-stack web applications using ASP.NET Core, C#, React.js, and MSSQL.',
       'Built and maintained REST APIs for frontend and third-party integrations.',
@@ -22,6 +24,8 @@ export const experience = [
     location: 'Bengaluru, India',
     period: 'Apr 2024 – May 2025',
     type: 'Full-Time',
+    tagline: 'Full-stack delivery in production',
+    gradient: 'linear-gradient(160deg, #7c3aed 0%, #5b21b6 45%, #1e1b4b 100%)',
     highlights: [
       'Worked as a .NET Full Stack Developer with 1 year and 2 months of professional experience.',
       'Contributed to Cloud & DevOps using AWS and Microsoft Azure (App Service, VMs, ACR, AKS).',
@@ -38,6 +42,8 @@ export const experience = [
     location: 'Kerala, India',
     period: 'Mar 2023 – Mar 2024',
     type: 'Internship',
+    tagline: 'Cloud infrastructure and automation',
+    gradient: 'linear-gradient(160deg, #0ea5e9 0%, #0369a1 45%, #0c4a6e 100%)',
     highlights: [
       'Completed a full-time internship as a Cloud Engineer.',
       'Managed AWS infrastructure including provisioning and monitoring cloud resources.',
@@ -54,6 +60,8 @@ export const experience = [
     location: 'Kerala, India',
     period: 'Oct 2020 – Dec 2021',
     type: 'Full-Time',
+    tagline: 'Networks, servers, and security',
+    gradient: 'linear-gradient(160deg, #636366 0%, #3a3a3c 45%, #1d1d1f 100%)',
     highlights: [
       'Specialized in centralized and distributed LAN networking and system administration.',
       'Configured VLANs, trunking, IPv6, routing, and switching for optimized network performance.',

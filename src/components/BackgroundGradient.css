@@ -1,0 +1,313 @@
+/* Animated moving gradient + scroll-synced background video */
+
+.bg-gradient-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #000000;
+}
+
+.bg-video-layer {
+  position: absolute;
+  inset: -12%;
+  will-change: transform;
+  transform: scale(1.08);
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: saturate(0.65) contrast(1.15) brightness(0.55);
+  transition: opacity 1.2s ease;
+}
+
+.bg-gradient-scene--video .bg-video {
+  opacity: 0.42;
+}
+
+.bg-gradient-scene--fallback .bg-fluid-layer {
+  opacity: 1;
+}
+
+.bg-gradient-scene--video .bg-fluid-layer {
+  opacity: 0.35;
+}
+
+.bg-fluid-layer {
+  position: absolute;
+  inset: -20%;
+  opacity: 0.85;
+  transition: opacity 1s ease;
+}
+
+.bg-fluid-wave {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.bg-fluid-wave--a {
+  width: 80vw;
+  height: 80vw;
+  top: 10%;
+  left: -20%;
+  background: radial-gradient(circle, rgba(227, 30, 36, 0.45) 0%, transparent 65%);
+  animation: bg-fluid-flow-a 18s ease-in-out infinite;
+}
+
+.bg-fluid-wave--b {
+  width: 70vw;
+  height: 70vw;
+  bottom: -10%;
+  right: -15%;
+  background: radial-gradient(circle, rgba(255, 90, 50, 0.32) 0%, transparent 68%);
+  animation: bg-fluid-flow-b 22s ease-in-out infinite;
+}
+
+.bg-fluid-wave--c {
+  width: 55vw;
+  height: 55vw;
+  top: 40%;
+  left: 35%;
+  background: radial-gradient(circle, rgba(120, 20, 30, 0.38) 0%, transparent 70%);
+  animation: bg-fluid-flow-c 26s ease-in-out infinite;
+}
+
+.bg-gradient-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(227, 30, 36, 0.22) 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.35) 70%,
+    rgba(139, 10, 16, 0.18) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.bg-film-grain {
+  position: absolute;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: bg-grain-shift 0.55s steps(4) infinite;
+  pointer-events: none;
+}
+
+@keyframes bg-fluid-flow-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18vw, -8vh) scale(1.15);
+  }
+}
+
+@keyframes bg-fluid-flow-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-14vw, 10vh) scale(1.1);
+  }
+}
+
+@keyframes bg-fluid-flow-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(8vw, -14vh) scale(0.9);
+  }
+}
+
+@keyframes bg-grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5%, -5%);
+  }
+}
+
+.bg-gradient-base {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, #1a0505 0%, #000000 55%);
+}
+
+.bg-gradient-mesh {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.55;
+  background: linear-gradient(
+    125deg,
+    #000000 0%,
+    #e31e24 18%,
+    #4a0808 36%,
+    #000000 52%,
+    #7a1010 68%,
+    #ff6b6f 82%,
+    #000000 100%
+  );
+  background-size: 300% 300%;
+  animation: bg-gradient-mesh-shift 22s ease-in-out infinite;
+  filter: blur(48px);
+  will-change: transform, background-position;
+}
+
+.bg-gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.bg-gradient-blob--red {
+  width: min(72vw, 640px);
+  height: min(72vw, 640px);
+  top: -12%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(227, 30, 36, 0.55) 0%, transparent 68%);
+  animation: bg-blob-drift-a 26s ease-in-out infinite;
+}
+
+.bg-gradient-blob--crimson {
+  width: min(58vw, 520px);
+  height: min(58vw, 520px);
+  top: 38%;
+  right: -14%;
+  background: radial-gradient(circle, rgba(139, 10, 16, 0.5) 0%, transparent 70%);
+  animation: bg-blob-drift-b 32s ease-in-out infinite;
+}
+
+.bg-gradient-blob--amber {
+  width: min(48vw, 440px);
+  height: min(48vw, 440px);
+  bottom: -10%;
+  left: 22%;
+  background: radial-gradient(circle, rgba(255, 120, 60, 0.28) 0%, transparent 72%);
+  animation: bg-blob-drift-c 24s ease-in-out infinite;
+}
+
+.bg-gradient-blob--violet {
+  width: min(42vw, 380px);
+  height: min(42vw, 380px);
+  top: 18%;
+  left: 48%;
+  background: radial-gradient(circle, rgba(90, 20, 80, 0.22) 0%, transparent 70%);
+  animation: bg-blob-drift-d 30s ease-in-out infinite;
+}
+
+.bg-gradient-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 50%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+@keyframes bg-gradient-mesh-shift {
+  0% {
+    transform: translate(-8%, -6%) rotate(0deg);
+    background-position: 0% 50%;
+  }
+  33% {
+    transform: translate(4%, 2%) rotate(2deg);
+    background-position: 50% 80%;
+  }
+  66% {
+    transform: translate(-3%, 5%) rotate(-1deg);
+    background-position: 100% 30%;
+  }
+  100% {
+    transform: translate(-8%, -6%) rotate(0deg);
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bg-blob-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(14vw, 10vh) scale(1.12);
+  }
+}
+
+@keyframes bg-blob-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-12vw, -8vh) scale(1.08);
+  }
+}
+
+@keyframes bg-blob-drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10vw, -12vh) scale(0.92);
+  }
+}
+
+@keyframes bg-blob-drift-d {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-8vw, 14vh) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-gradient-mesh,
+  .bg-gradient-blob,
+  .bg-fluid-wave,
+  .bg-film-grain {
+    animation: none;
+  }
+
+  .bg-gradient-mesh {
+    opacity: 0.35;
+    background-position: 40% 50%;
+  }
+
+  .bg-video-layer {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-gradient-mesh {
+    filter: blur(36px);
+    opacity: 0.45;
+  }
+
+  .bg-gradient-blob {
+    filter: blur(56px);
+  }
+}

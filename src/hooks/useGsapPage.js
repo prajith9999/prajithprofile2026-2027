@@ -4,6 +4,8 @@ import {
   prefersReducedMotion,
   scrollFadeUp,
   scrollScaleX,
+  scrollParallax,
+  scrollScaleReveal,
   animateStatCounters,
   SCROLL_START,
   SCROLL_TOGGLE,
@@ -30,6 +32,10 @@ const CARD_SELECTORS = [
   '.about-stats',
   '.languages-table-wrapper',
   '.contact-form',
+  '.experience-card-item',
+  '.values-strength-card',
+  '.timeline-card',
+  '.values-hero-cards',
 ].join(', ');
 
 const HEADER_SELECTORS = [
@@ -46,22 +52,28 @@ function animatePageHero(root) {
   const hero = root.querySelector('.page-hero .container');
   if (!hero) return;
 
+  if (hero.querySelector('.page-title.split-text[data-split-on="load"]')) {
+    return;
+  }
+
   const items = hero.querySelectorAll(
     '.page-badge, .page-title:not(.split-text), .page-description',
   );
   if (!items.length) return;
 
   gsap.from(items, {
-    y: 32,
+    y: 40,
     opacity: 0,
-    duration: 0.85,
+    duration: 0.95,
     stagger: 0.12,
-    ease: 'power3.out',
+    ease: 'power4.out',
     delay: 0.05,
   });
 }
 
 function animateHomeLanding(root) {
+  if (!root.querySelector('.home-page')) return;
+
   const landing = root.querySelector('.hero-landing-bg, .hero-video');
   if (landing) {
     gsap.from(landing, {
@@ -292,20 +304,22 @@ function animateCardsInSections(root) {
     if (section.classList.contains('home-prefooter')) return;
 
     gsap.from(cards, {
+      immediateRender: false,
       scrollTrigger: {
         trigger: section,
         start: SCROLL_START,
         toggleActions: SCROLL_TOGGLE,
         once: true,
       },
-      y: 48,
+      y: 56,
       opacity: 0,
-      duration: 0.78,
+      scale: 0.98,
+      duration: 0.95,
       stagger: {
-        amount: Math.min(0.6, cards.length * 0.08),
+        amount: Math.min(0.72, cards.length * 0.09),
         from: 'start',
       },
-      ease: 'power3.out',
+      ease: 'power4.out',
     });
   });
 }
@@ -319,10 +333,12 @@ function animateStoryRows(root) {
 
     if (image) {
       gsap.from(image, {
+        immediateRender: false,
         scrollTrigger: {
           trigger: row,
           start: SCROLL_START,
           toggleActions: SCROLL_TOGGLE,
+          once: true,
         },
         x: imageX,
         opacity: 0,
@@ -333,10 +349,12 @@ function animateStoryRows(root) {
 
     if (content) {
       gsap.from(content, {
+        immediateRender: false,
         scrollTrigger: {
           trigger: row,
           start: SCROLL_START,
           toggleActions: SCROLL_TOGGLE,
+          once: true,
         },
         x: contentX,
         opacity: 0,
@@ -348,11 +366,136 @@ function animateStoryRows(root) {
   });
 }
 
+function animateBackgroundGradient(root) {
+  const mesh = root.querySelector('.bg-gradient-mesh');
+  const blobs = root.querySelectorAll('.bg-gradient-blob');
+  const videoLayer = root.querySelector('.bg-video-layer');
+  const video = root.querySelector('.bg-video');
+  const fluidLayer = root.querySelector('.bg-fluid-layer');
+  const tint = root.querySelector('.bg-gradient-tint');
+
+  const scrollTriggerBase = {
+    trigger: document.documentElement,
+    start: 'top top',
+    end: 'bottom bottom',
+  };
+
+  if (videoLayer) {
+    gsap.fromTo(
+      videoLayer,
+      { scale: 1.08, yPercent: -6 },
+      {
+        scale: 1.22,
+        yPercent: 10,
+        ease: 'none',
+        scrollTrigger: {
+          ...scrollTriggerBase,
+          scrub: 1.1,
+        },
+      },
+    );
+  }
+
+  if (video && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const bindScrollVideo = () => {
+      if (!video.duration || Number.isNaN(video.duration)) return;
+
+      gsap.to(video, {
+        currentTime: video.duration,
+        ease: 'none',
+        scrollTrigger: {
+          ...scrollTriggerBase,
+          scrub: 0.65,
+        },
+      });
+    };
+
+    if (video.readyState >= 1) {
+      bindScrollVideo();
+    } else {
+      video.addEventListener('loadedmetadata', bindScrollVideo, { once: true });
+    }
+  }
+
+  if (fluidLayer) {
+    gsap.to(fluidLayer, {
+      yPercent: 14,
+      rotation: 2,
+      ease: 'none',
+      scrollTrigger: {
+        ...scrollTriggerBase,
+        scrub: 1.5,
+      },
+    });
+  }
+
+  if (tint) {
+    gsap.fromTo(
+      tint,
+      { opacity: 0.85 },
+      {
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          ...scrollTriggerBase,
+          scrub: 1.2,
+        },
+      },
+    );
+  }
+
+  if (mesh) {
+    gsap.to(mesh, {
+      yPercent: 18,
+      ease: 'none',
+      scrollTrigger: {
+        ...scrollTriggerBase,
+        scrub: 1.4,
+      },
+    });
+  }
+
+  blobs.forEach((blob, index) => {
+    gsap.to(blob, {
+      y: (index + 1) * 80,
+      x: index % 2 === 0 ? 40 : -40,
+      ease: 'none',
+      scrollTrigger: {
+        ...scrollTriggerBase,
+        scrub: 1.8 + index * 0.2,
+      },
+    });
+  });
+}
+
+function animateParallax(root) {
+  root.querySelectorAll('.about-snippet-image, .story-image').forEach((block) => {
+    const section = block.closest('section') || block;
+    scrollParallax([block], section, { from: -12, to: 12, scrub: 1.2 });
+  });
+
+  root.querySelectorAll('.premium-slide-panel').forEach((panel) => {
+    scrollParallax([panel], panel.closest('section') || panel, {
+      from: -6,
+      to: 6,
+      scrub: 1.4,
+    });
+  });
+
+  const snippetCard = root.querySelector('.about-snippet-card');
+  if (snippetCard) {
+    scrollScaleReveal([snippetCard], snippetCard.closest('section') || snippetCard, {
+      scale: 1.04,
+      y: 56,
+    });
+  }
+}
+
 function animateDividers(root) {
-  const skillsLine = root.querySelector('.skills-divider');
+  const skillsShowcase = root.querySelector('.skills-showcase');
   const skillsSection = root.querySelector('.skills-section');
-  if (skillsLine && skillsSection) {
-    scrollScaleX(skillsLine, skillsSection, { start: 'top 80%' });
+  if (skillsShowcase && skillsSection) {
+    scrollFadeUp([skillsShowcase], skillsSection, { y: 24, stagger: 0 });
   }
 }
 
@@ -393,31 +536,84 @@ function animateFooter(root) {
 }
 
 function animateExperienceTimeline(root) {
-  root.querySelectorAll('.experience-card').forEach((card, index) => {
+  root.querySelectorAll('.experience-card-item, .experience-card').forEach((card) => {
     gsap.from(card, {
+      immediateRender: false,
       scrollTrigger: {
         trigger: card,
         start: 'top 88%',
         toggleActions: SCROLL_TOGGLE,
+        once: true,
       },
-      x: index % 2 === 0 ? -32 : 32,
+      y: 56,
       opacity: 0,
-      duration: 0.85,
+      duration: 0.9,
       ease: 'power3.out',
     });
   });
 }
 
+function animateInnerPages(root) {
+  const page = root.querySelector('.page-enter:not(.home-page)');
+  if (!page) return;
+
+  page.querySelectorAll('.section').forEach((section) => {
+    const header = section.querySelector(
+      ':scope > .container > .section-title, :scope > .container > .section-header, :scope > .container > .section-subtitle',
+    );
+    const target = header || section.querySelector(':scope > .container');
+    if (!target) return;
+
+    gsap.from(target, {
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 88%',
+        toggleActions: SCROLL_TOGGLE,
+        once: true,
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out',
+    });
+  });
+
+  const valuesHero = page.querySelector('.values-hero');
+  if (valuesHero) {
+    gsap.from(valuesHero.querySelectorAll('.values-hero-headline, .values-hero-cards, .values-hero-bottom'), {
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: valuesHero,
+        start: 'top 85%',
+        toggleActions: SCROLL_TOGGLE,
+        once: true,
+      },
+      y: 44,
+      opacity: 0,
+      duration: 0.85,
+      stagger: 0.12,
+      ease: 'power3.out',
+    });
+  }
+
+  const experienceShowcase = page.querySelector('.experience-showcase');
+  if (experienceShowcase) {
+    scrollFadeUp([experienceShowcase], experienceShowcase, { y: 32, start: 'top 92%' });
+  }
+}
+
 function animateTimelineItems(root) {
-  root.querySelectorAll('.timeline-item').forEach((item, index) => {
-    const x = index % 2 === 0 ? -36 : 36;
+  root.querySelectorAll('.timeline-item').forEach((item) => {
     gsap.from(item, {
+      immediateRender: false,
       scrollTrigger: {
         trigger: item,
         start: 'top 88%',
         toggleActions: SCROLL_TOGGLE,
+        once: true,
       },
-      x,
+      y: 40,
       opacity: 0,
       duration: 0.8,
       ease: 'power3.out',
@@ -425,7 +621,7 @@ function animateTimelineItems(root) {
   });
 }
 
-export function useGsapPage(rootRef, routeKey) {
+export function useGsapPage(rootRef, routeKey, isHome = routeKey === '/') {
   useEffect(() => {
     const root = rootRef.current;
     if (!root || prefersReducedMotion()) return;
@@ -436,19 +632,26 @@ export function useGsapPage(rootRef, routeKey) {
       revertSplit = animateSplitText(root) ?? (() => {});
       animateHomeLanding(root);
       animatePageHero(root);
+      animateBackgroundGradient(root);
+      animateParallax(root);
       animateSectionHeaders(root);
-      animateDividers(root);
+      if (isHome) {
+        animateDividers(root);
+      }
       animateCardsInSections(root);
       animateStoryRows(root);
       animateExperienceTimeline(root);
       animateTimelineItems(root);
       animateContactSection(root);
       animateFooter(root);
+      if (!isHome) {
+        animateInnerPages(root);
+      }
     }, root);
 
     return () => {
       revertSplit();
       ctx.revert();
     };
-  }, [rootRef, routeKey]);
+  }, [rootRef, routeKey, isHome]);
 }
