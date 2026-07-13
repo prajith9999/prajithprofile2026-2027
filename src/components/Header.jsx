@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import AppIcon from './AppIcon';
 import { profile } from '../data/profile';
+import { scrollToHash, scrollToHero } from '../utils/scroll';
 import './Header.css';
 
 const navLinks = [
@@ -10,7 +11,7 @@ const navLinks = [
   { to: '/', hash: '#classes', label: 'Classes' },
   { to: '/experience', label: 'Experience' },
   { to: '/achievements', hash: '#projects', label: 'Projects' },
-  { to: '/achievements', label: 'Certs' },
+  { to: '/achievements', hash: '#certifications', label: 'Certs' },
 ];
 
 function isNavLinkActive(link, location) {
@@ -19,9 +20,6 @@ function isNavLinkActive(link, location) {
   }
   if (link.to === '/') {
     return location.pathname === '/' && !location.hash;
-  }
-  if (link.to === '/achievements') {
-    return location.pathname === '/achievements' && location.hash !== '#projects';
   }
   return location.pathname === link.to;
 }
@@ -55,6 +53,20 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const handleNavClick = (link) => {
+    closeMenu();
+
+    const isCurrentRoute = location.pathname === link.to;
+    const isCurrentHash = (link.hash || '') === location.hash;
+    if (!isCurrentRoute || !isCurrentHash) return;
+
+    if (link.hash) {
+      scrollToHash(link.hash);
+    } else {
+      scrollToHero();
+    }
+  };
+
   return (
     <header className={`header ${menuOpen ? 'header--menu-open' : ''}`}>
       {menuOpen && (
@@ -68,7 +80,12 @@ export default function Header() {
 
       <div className="header-shell">
         <div className="header-main">
-          <Link to="/" className="header-logo" onClick={closeMenu} aria-label="PM — Home">
+          <Link
+            to="/"
+            className="header-logo"
+            onClick={() => handleNavClick(navLinks[0])}
+            aria-label="PM — Home"
+          >
             <span className="header-logo__p">P</span>
             <span className="header-logo__m">M</span>
           </Link>
@@ -89,7 +106,7 @@ export default function Header() {
                     className={() =>
                       `nav-link ${isNavLinkActive(link, location) ? 'active' : ''}`
                     }
-                    onClick={closeMenu}
+                    onClick={() => handleNavClick(link)}
                   >
                     {link.label}
                   </NavLink>

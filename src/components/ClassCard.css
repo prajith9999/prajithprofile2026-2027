@@ -10,6 +10,20 @@
   border-radius: 0;
   overflow: hidden;
   transition: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.class-card:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 4px;
+}
+
+.class-card:hover,
+.class-card:focus-visible {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .class-card--dark {

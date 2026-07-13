@@ -29,7 +29,7 @@ export const experience = [
     highlights: [
       'Worked as a .NET Full Stack Developer with 1 year and 2 months of professional experience.',
       'Contributed to Cloud & DevOps using AWS and Microsoft Azure (App Service, VMs, ACR, AKS).',
-      'Implemented CI/CD pipelines using Azure DevOps, GitHub Actions, and Jenkins.',
+      'Implemented CI/CD pipelines using Azure DevOps and GitHub Actions.',
       'Managed containerized applications with Docker and Kubernetes deployments.',
       'Provisioned infrastructure using Terraform, Linux administration, and Shell scripting.',
       'Built backend applications with C#, ASP.NET Core, Entity Framework Core, and JWT Authentication.',
@@ -49,7 +49,6 @@ export const experience = [
       'Managed AWS infrastructure including provisioning and monitoring cloud resources.',
       'Supported DevOps activities including deployment and automation tasks.',
       'Administered Linux servers ensuring system performance and security.',
-      'Created and executed Ansible playbooks for configuration management.',
       'Built and managed Docker containers for application deployment.',
     ],
   },

@@ -24,7 +24,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="page-enter">
+    <div className="page-enter contact-page">
       <section id="hero" className="page-hero">
         <div className="container">
           <span className="page-badge">Get in Touch</span>

@@ -14,7 +14,7 @@ const strengths = [
 
 export default function About() {
   return (
-    <div className="page-enter">
+    <div className="page-enter about-page">
       <section id="hero" className="page-hero">
         <div className="container">
           <h1 className="page-title split-text" data-split="lines" data-split-on="load">My Story</h1>
@@ -61,6 +61,7 @@ export default function About() {
                 <img src={story.image} alt={story.title} loading="lazy" />
               </div>
               <div className={`story-content story-content--${story.theme}`}>
+                <span className="story-chapter">{story.label}</span>
                 <h3>{story.title}</h3>
                 <p>{story.text}</p>
               </div>
@@ -147,7 +148,7 @@ export default function About() {
       <section className="section education-section">
         <div className="container">
           <h2 className="section-title">Education</h2>
-          <div className="education-card box">
+          <div className="education-card">
             <div className="education-simple">
               <h3>{education.degree}</h3>
               <p className="education-institution">{education.institution}</p>

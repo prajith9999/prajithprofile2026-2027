@@ -8,20 +8,48 @@ import { skillCategories } from '../data/skills';
 import { onlineClasses } from '../data/classes';
 import { images } from '../data/images';
 import { insightCards, prefooterHeadline } from '../data/insights';
+import { education } from '../data/experience';
 import './Home.css';
+
+const landingStrengths = [
+  { title: 'Clean Architecture', desc: 'Building scalable, secure applications with best practices and maintainable code.' },
+  { title: 'Agile Delivery', desc: 'Experienced in Agile environments with cross-functional team collaboration.' },
+  { title: 'Automation First', desc: 'CI/CD pipelines, IaC with Terraform, and infrastructure automation expertise.' },
+  { title: 'Ownership Mindset', desc: 'Results-driven professional focused on reliable production systems and performance.' },
+];
+
+const technologyBrands = [
+  { name: '.NET', logo: '/images/logos/dotnet.svg' },
+  { name: 'React', logo: '/images/logos/react.svg' },
+  { name: 'SQL Server', logo: '/images/logos/sql-server.svg' },
+  { name: 'Microsoft Azure', logo: '/images/logos/azure.svg' },
+  { name: 'Amazon Web Services', logo: '/images/logos/aws.svg', tone: 'light-on-dark' },
+  { name: 'Docker', logo: '/images/logos/docker.svg' },
+  { name: 'Kubernetes', logo: '/images/logos/kubernetes.svg' },
+  { name: 'Microsoft 365', logo: '/images/logos/microsoft-365.svg' },
+  { name: 'Google Workspace', logo: '/images/logos/google-workspace.svg', tone: 'wide' },
+  { name: 'GitHub', logo: '/images/logos/github.svg', tone: 'light-on-dark' },
+  { name: 'Terraform', logo: '/images/logos/terraform.svg' },
+  { name: 'Linux', logo: '/images/logos/linux.svg' },
+  { name: 'Windows Server', logo: '/images/logos/windows.svg' },
+  { name: 'C#', logo: '/images/logos/csharp.svg' },
+  { name: 'JavaScript', logo: '/images/logos/javascript.svg' },
+  { name: 'HTML5', logo: '/images/logos/html5.svg' },
+  { name: 'CSS3', logo: '/images/logos/css3.svg' },
+  { name: 'Postman', logo: '/images/logos/postman.svg' },
+  { name: 'Git', logo: '/images/logos/git.svg' },
+];
 
 export default function Home() {
   return (
     <div className="page-enter home-page">
       <section id="hero" className="hero-apple" aria-label="Introduction">
         <div className="container hero-apple-inner">
-          <p className="hero-apple-hello split-text" data-split="lines">
-            Hey there
-          </p>
-          <h1 className="hero-apple-headline split-text" data-split="lines">
-            I&apos;m Prajith. Your go-to engineer for scalable digital products.
+          <h1 className="hero-apple-headline">
+            I&apos;m Prajith. Your go-to engineer for{' '}
+            <span className="hero-apple-accent">scalable digital products.</span>
           </h1>
-          <p className="hero-apple-body split-text" data-split="lines">
+          <p className="hero-apple-body">
             {profile.title} based in {profile.location} — .NET Full Stack, cloud, and DevOps
             with a focus on secure, production-ready delivery.
           </p>
@@ -161,6 +189,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="technology-brand-shell" aria-label="Core technologies and platforms">
+          <div className="technology-brand-grid">
+            {technologyBrands.map((brand) => (
+              <div key={brand.name} className="technology-brand">
+                <span className="technology-brand-mark" aria-hidden="true">
+                  <img
+                    src={brand.logo}
+                    className={brand.tone ? `technology-logo--${brand.tone}` : undefined}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span className="technology-brand-name">{brand.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="skills-showcase">
           <div className="skills-grid">
             {skillCategories.map((skill) => (
@@ -174,14 +220,18 @@ export default function Home() {
         <div className="container">
           <div className="classes-section-head">
             <div className="classes-header-accent" aria-hidden="true" />
-            <div className="classes-header-copy">
+            <Link
+              to="/contact"
+              className="classes-header-copy classes-header-link"
+              aria-label="Contact me about online training programs"
+            >
               <span className="section-label">Training Programs</span>
               <h2 className="section-title split-text" data-split="lines" data-scrub="true">Online Classes</h2>
               <p className="section-subtitle classes-subtitle">
                 Live online sessions in .NET Full Stack, cloud engineering,
                 and system administration with networking and Linux.
               </p>
-            </div>
+            </Link>
             <div className="classes-header-icon" aria-hidden="true">
               <AppIcon name="academic" size={40} />
             </div>
@@ -208,8 +258,6 @@ export default function Home() {
             <ImageCard
               src={images.developer}
               alt="Working on laptop"
-              title="Hands-On Development"
-              caption="React · .NET · Cloud"
             />
           </div>
           <div className="about-snippet-text">
@@ -221,7 +269,7 @@ export default function Home() {
             <p>{summary[1]}</p>
             <Link to="/about" className="btn btn-outline about-snippet-btn">Read Full Profile</Link>
           </div>
-          <div className="about-snippet-card box">
+          <div className="about-snippet-card">
             <div className="snippet-row">
               <span className="snippet-key">Role</span>
               <span className="snippet-val">{profile.title}</span>
@@ -241,6 +289,69 @@ export default function Home() {
             <div className="snippet-row">
               <span className="snippet-key">Stack</span>
               <span className="snippet-val">{profile.tagline}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section landing-credentials" aria-labelledby="landing-credentials-title">
+        <div className="container landing-credentials-shell">
+          <div className="landing-personal">
+            <span className="landing-editorial-label">Profile</span>
+            <h2 id="landing-credentials-title" className="landing-editorial-title">Personal Details</h2>
+            <dl className="landing-personal-grid">
+              {[
+                ['Nationality', profile.nationality],
+                ['Place of Birth', profile.placeOfBirth],
+                ['Work Permit', profile.workPermit],
+                ['Location', profile.location],
+              ].map(([label, value]) => (
+                <div className="landing-personal-item" key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="landing-strengths">
+            <span className="landing-editorial-label">Professional</span>
+            <h2 className="landing-editorial-title">Strengths</h2>
+            <div className="landing-strengths-grid">
+              {landingStrengths.map((strength, index) => (
+                <article className="landing-strength" key={strength.title}>
+                  <span className="landing-strength-number">{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{strength.title}</h3>
+                  <p>{strength.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="landing-excellence">
+            <div>
+              <span className="landing-editorial-label">Engineering excellence</span>
+              <p className="landing-excellence-copy">
+                The qualities that define my approach to building secure, scalable,
+                production-ready systems.
+              </p>
+            </div>
+            <Link to="/experience" className="landing-experience-link">
+              View Experience <AppIcon name="chevronRight" size={17} />
+            </Link>
+            <div className="landing-location">
+              <AppIcon name="mapPin" size={18} />
+              <span><small>Based in</small>{profile.location}</span>
+            </div>
+          </div>
+
+          <div className="landing-education">
+            <span className="landing-editorial-label">Education</span>
+            <div className="landing-education-copy">
+              <h2>{education.degree}</h2>
+              <p>{education.institution}</p>
+              <span>{education.location}</span>
+              <time>{education.year}</time>
             </div>
           </div>
         </div>
@@ -279,10 +390,10 @@ export default function Home() {
               <article
                 key={card.id}
                 className={`insight-card stat-box color-glass-card${card.tone === 'light' ? ' color-glass-card--starlight' : ''}`}
-                style={{ background: card.gradient }}
               >
-                <div className="insight-card-visual color-glass-card__header" aria-hidden="true">
-                  <AppIcon name={card.icon} size={40} className="insight-card-icon" />
+                <div className="insight-card-visual color-glass-card__header">
+                  <img src={card.image} alt="" loading="lazy" />
+                  <AppIcon name={card.icon} size={32} className="insight-card-icon" aria-hidden="true" />
                 </div>
                 <div className="insight-card-body color-glass-card__body">
                   <span className="insight-card-label">{card.label}</span>
@@ -293,6 +404,14 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="strengths-banner" aria-labelledby="strengths-banner-title">
+        <h2 id="strengths-banner-title" className="strengths-banner-title">
+          <span>Professional</span>
+          <span className="strengths-banner-capsule" aria-hidden="true" />
+          <span>Strengths</span>
+        </h2>
       </section>
     </div>
   );

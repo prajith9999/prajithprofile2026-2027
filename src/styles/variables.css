@@ -14,11 +14,11 @@
   --color-text-subtle: rgba(245, 245, 247, 0.48);
 
   /* iPad Air finish colors */
-  --apple-blue: #0071e3;
-  --apple-blue-light: #2997ff;
+  --apple-blue: #f2f2ee;
+  --apple-blue-light: #ffffff;
   /* Brand accent — encoder red */
-  --apple-purple: #e31e24;
-  --apple-purple-light: #ff4d52;
+  --apple-purple: #d8d8d2;
+  --apple-purple-light: #f4f4ef;
   --apple-space-gray: #424245;
   --apple-space-gray-light: #86868b;
   --apple-starlight: #e8e0d4;
@@ -26,17 +26,17 @@
 
   /* Accents */
   --color-violet: var(--apple-purple);
-  --color-violet-dark: #c41920;
-  --color-violet-light: rgba(227, 30, 36, 0.18);
-  --color-green: #34c759;
-  --color-green-dark: #248a3d;
-  --color-green-light: rgba(52, 199, 89, 0.12);
+  --color-violet-dark: #a4a4a0;
+  --color-violet-light: rgba(255, 255, 255, 0.12);
+  --color-green: #b7b7b2;
+  --color-green-dark: #777773;
+  --color-green-light: rgba(255, 255, 255, 0.1);
   --color-rose: var(--color-green);
   --color-rose-dark: var(--color-green-dark);
   --color-rose-light: var(--color-green-light);
-  --color-gradient-start: #ff6b6f;
+  --color-gradient-start: #ffffff;
   --color-gradient-mid: var(--apple-purple);
-  --color-gradient-end: #c41920;
+  --color-gradient-end: #8b8b87;
   --color-gradient-soft: var(--apple-purple-light);
 
   /* Legacy compat */
@@ -62,8 +62,8 @@
   --color-ash-darker: rgba(255, 255, 255, 0.08);
 
   /* Card color fills — iPad Air finishes */
-  --card-blue: linear-gradient(145deg, #0071e3 0%, #2997ff 55%, #64b5f6 100%);
-  --card-purple: linear-gradient(145deg, #c41920 0%, #e31e24 55%, #ff6b6f 100%);
+  --card-blue: linear-gradient(145deg, #111111 0%, #353535 55%, #666662 100%);
+  --card-purple: linear-gradient(145deg, #242424 0%, #555552 55%, #8c8c87 100%);
   --card-gray: linear-gradient(145deg, #3a3a3c 0%, #636366 55%, #86868b 100%);
   --card-starlight: linear-gradient(145deg, #d4c4b0 0%, #e8e0d4 55%, #f5f0e8 100%);
 
@@ -106,6 +106,7 @@
 
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --header-height: 2.75rem;
+  --header-nav-height: var(--header-height);
   --container-max: 980px;
 
   --section-padding-y: 5.5rem;

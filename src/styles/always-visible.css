@@ -1,0 +1,55 @@
+/* Critical landing actions must never be hidden by reveal animations. */
+.hero-apple .hero-apple-actions,
+.hero-apple .hero-apple-actions.gsap-reveal-item {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+.hero-apple .hero-apple-cta {
+  min-height: 54px;
+  padding: 0.9rem 2.4rem;
+  border-radius: 0 !important;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  box-shadow: none;
+}
+
+.hero-apple .hero-apple-cta--primary {
+  color: #ffffff !important;
+  background: #7c3aed !important;
+  border: 1px solid #7c3aed !important;
+}
+
+.hero-apple .hero-apple-cta--primary:hover {
+  color: #ffffff !important;
+  background: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
+}
+
+.hero-apple .hero-apple-cta--ghost {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.46) !important;
+}
+
+.hero-apple .hero-apple-cta--ghost:hover {
+  color: var(--accent-purple-soft, #c4b5fd) !important;
+  border-color: var(--accent-purple-soft, #c4b5fd) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-apple .hero-apple-actions {
+    width: 100%;
+  }
+
+  .hero-apple .hero-apple-cta {
+    width: 100%;
+    min-height: 50px;
+  }
+}

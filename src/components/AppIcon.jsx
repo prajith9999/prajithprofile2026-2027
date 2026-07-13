@@ -50,6 +50,24 @@ function GitHubIcon({ className, width, height }) {
   );
 }
 
+function LinkedInIcon({ className, width, height }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6.5 8.25H3.25V21H6.5V8.25ZM4.88 3A1.88 1.88 0 1 0 4.88 6.75 1.88 1.88 0 0 0 4.88 3ZM21 13.69c0-3.84-2.05-5.63-4.79-5.63-2.2 0-3.19 1.21-3.74 2.06V8.25H9.22V21h3.25v-6.31c0-1.66.31-3.27 2.37-3.27 2.03 0 2.06 1.9 2.06 3.38V21H21v-7.31Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className, width, height }) {
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.4" cy="6.7" r="1.15" fill="currentColor" />
+    </svg>
+  );
+}
+
 const ICONS = {
   paintBrush: PaintBrushIcon,
   bolt: BoltIcon,
@@ -82,6 +100,8 @@ const ICONS = {
   arrowUp: ArrowUpSolidIcon,
   chevronRight: ChevronRightIcon,
   github: GitHubIcon,
+  linkedin: LinkedInIcon,
+  instagram: InstagramIcon,
 };
 
 export default function AppIcon({ name, className = '', size = 24 }) {

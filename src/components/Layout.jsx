@@ -3,9 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
-import BackgroundGradient from './BackgroundGradient';
 import { useGsapPage } from '../hooks/useGsapPage';
-import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import './Layout.css';
 
 export default function Layout() {
@@ -13,7 +11,6 @@ export default function Layout() {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
 
-  useSmoothScroll();
   useGsapPage(layoutRef, pathname, isHome);
 
   useEffect(() => {
@@ -23,7 +20,6 @@ export default function Layout() {
 
   return (
     <div className={`site-layout ${isHome ? '' : 'site-layout--inner'}`} ref={layoutRef}>
-      <BackgroundGradient />
       <ScrollToTop />
       <Header />
       <main className={`main-content ${isHome ? '' : 'main-content--inner'}`}>

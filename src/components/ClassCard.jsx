@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import AppIcon from './AppIcon';
 import './ClassCard.css';
 
@@ -5,9 +6,11 @@ export default function ClassCard({ course }) {
   const isLight = course.tone === 'light';
 
   return (
-    <article
+    <Link
+      to="/contact"
       className={`class-card class-card-item class-card--${isLight ? 'light' : 'dark'}`}
       style={{ background: course.gradient }}
+      aria-label={`Enquire about ${course.title}`}
     >
       <div className="class-card-inner">
         <span className="class-card-label">{course.category}</span>
@@ -32,6 +35,6 @@ export default function ClassCard({ course }) {
       <div className="class-card-visual" aria-hidden="true">
         <AppIcon name={course.icon} size={56} className="class-card-icon" />
       </div>
-    </article>
+    </Link>
   );
 }

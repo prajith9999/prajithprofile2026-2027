@@ -9,5 +9,7 @@ export const images = {
   developer: img('IMG-20260321-WA0086.jpg'),
   business: img('IMG-20260321-WA0093.jpg'),
   casual: img('IMG-20260321-WA0119.jpg'),
+  partnership: img('Partnership-pana.png'),
+  computerTroubleshooting: img('Computer troubleshooting-pana.png'),
+  omegaRedClock: img('WANDKLOK OMEGA RED.jpg'),
 };
-

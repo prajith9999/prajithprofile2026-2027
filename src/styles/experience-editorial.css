@@ -1,0 +1,223 @@
+/* Experience page: open editorial layout with stable refresh rendering. */
+.experience-page,
+.experience-intro,
+.experience-showcase {
+  color: #ffffff;
+  background: #050505 !important;
+}
+
+.experience-intro {
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(440px, 66vh, 680px);
+  padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 7vw, 6rem);
+}
+
+.experience-intro-inner,
+.experience-showcase-shell {
+  max-width: 1280px;
+}
+
+.experience-intro-label {
+  display: block;
+  margin-bottom: 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c4b5fd;
+}
+
+.experience-intro h1 {
+  max-width: 11ch;
+  margin: 0 0 1.75rem;
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: #ffffff;
+}
+
+.experience-intro p {
+  max-width: 680px;
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.experience-showcase {
+  padding: 0 0 clamp(7rem, 12vw, 11rem);
+}
+
+.experience-showcase-shell {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5rem, 10vw, 9rem) !important;
+}
+
+.experience-card,
+.experience-card:hover,
+.experience-card-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(180px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  aspect-ratio: auto;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+  overflow: visible;
+}
+
+.experience-index {
+  padding-top: 0.2rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #c4b5fd;
+}
+
+.experience-card-meta,
+.experience-card-copy,
+.experience-card-title,
+.experience-card-tagline,
+.experience-card-company,
+.experience-highlights,
+.experience-highlights li {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.experience-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.experience-card-type {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c4b5fd !important;
+}
+
+.experience-card-period {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.experience-card-company {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.58) !important;
+}
+
+.experience-card-copy {
+  padding: 0;
+}
+
+.experience-card-title {
+  max-width: 15ch;
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: #ffffff !important;
+}
+
+.experience-card-tagline {
+  margin: 0 0 2rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.experience-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem clamp(2rem, 4vw, 4rem);
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+
+.experience-highlights li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.experience-highlights li::before {
+  content: '—';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #8b5cf6;
+}
+
+@media (max-width: 800px) {
+  .experience-intro {
+    min-height: 480px;
+  }
+
+  .experience-card,
+  .experience-card-item {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .experience-card-copy {
+    grid-column: 2;
+  }
+
+  .experience-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .experience-card,
+  .experience-card-item {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card-copy {
+    grid-column: 1;
+  }
+
+  .experience-card-title {
+    font-size: clamp(2rem, 12vw, 3.25rem);
+  }
+}

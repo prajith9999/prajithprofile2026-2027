@@ -33,6 +33,6 @@ export const onlineClasses = [
     gradient: 'linear-gradient(145deg, #3a3a3c 0%, #636366 55%, #86868b 100%)',
     tone: 'dark',
     description: 'Linux and Windows server administration, networking fundamentals, firewalls, routing, and infrastructure security.',
-    topics: ['Linux', 'Windows Server', 'Networking', 'Firewall', 'Ansible'],
+    topics: ['Linux', 'Windows Server', 'Networking', 'Firewall'],
   },
 ];

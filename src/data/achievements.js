@@ -99,8 +99,8 @@ export const projects = [
     id: 6,
     title: 'AWS Infrastructure Automation',
     period: '2023 – 2024',
-    technologies: ['Terraform', 'AWS EC2', 'S3', 'VPC', 'Ansible', 'Linux'],
-    description: 'Provisioned and automated AWS cloud infrastructure using Terraform, configured VPC and security groups, and managed Linux servers with Ansible playbooks.',
+    technologies: ['Terraform', 'AWS EC2', 'S3', 'VPC', 'Linux'],
+    description: 'Provisioned and automated AWS cloud infrastructure using Terraform, configured VPC and security groups, and managed Linux servers securely.',
     gradient: 'linear-gradient(145deg, #1e293b 0%, #4c1d95 50%, #8b5cf6 100%)',
   },
 ];

@@ -1,0 +1,83 @@
+/* Final structural rule: keep spacing, remove decorative divider lines sitewide. */
+hr {
+  display: none !important;
+}
+
+.header,
+.header-nav,
+.nav-mobile-tagline,
+.nav-mobile-actions,
+.nav-link,
+.nav-mobile-link,
+.hero-apple,
+.section,
+.page-hero,
+.premium-statement,
+.premium-split,
+.premium-slide,
+.home-prefooter,
+.strengths-banner,
+.footer,
+.footer-heading,
+.footer-bottom,
+.snippet-row,
+.personal-card,
+.education-card,
+.landing-personal,
+.landing-strengths,
+.landing-excellence,
+.landing-education,
+.landing-personal-item,
+.landing-strength,
+.story-section,
+.story-row,
+.values-hero-bottom,
+.contact-detail,
+.class-card-footer,
+.skill-card-footer,
+.project-card-gradient,
+.languages-section,
+.languages-table th,
+.languages-table td,
+.image-card-caption,
+.experience-highlights {
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+
+.timeline::before {
+  display: none !important;
+}
+
+.classes-cta,
+.classes-cta:hover {
+  margin-top: 0 !important;
+  padding: clamp(3rem, 6vw, 5rem) 1rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.classes-cta p {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.timeline,
+.achievement-stats,
+.projects-grid,
+.stats-grid,
+.diff-grid,
+.gallery-grid,
+.education-layout {
+  background-image: none !important;
+  border-color: transparent !important;
+}

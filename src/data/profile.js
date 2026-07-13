@@ -7,6 +7,7 @@ export const profile = {
   phone: '(+974) 77843003',
   linkedin: 'https://linkedin.com/in/prajith-ns-b3b202190',
   github: 'https://github.com/prajith96ns',
+  instagram: 'https://www.instagram.com/prajith_sivan__/',
   address: 'Barwa, Doha, Qatar 91477',
   workPermit: 'Qatari',
   placeOfBirth: 'Kerala, India',
@@ -17,6 +18,7 @@ export const summary = [
   'Software Engineer with 4+ years of overall IT experience, including 1 year as a Cloud Engineering Intern/Trainee. Experienced in .NET Full Stack Development, Cloud Computing, DevOps Engineering, System Administration, and Network Engineering.',
   'Skilled in designing, developing, and maintaining secure, scalable, and high-performance applications using C#, ASP.NET Core, .NET, React, and SQL Server. Strong experience in building RESTful APIs, database management, and enterprise application development while leveraging Microsoft Azure and AWS.',
   'Proficient in implementing CI/CD pipelines using Azure DevOps and GitHub Actions, containerization with Docker, orchestration using Kubernetes, and Infrastructure as Code with Terraform.',
+  'Experienced in Microsoft 365 and Google Workspace administration, domain and DNS management, n8n workflow automation, software design, unit testing, troubleshooting, and systematic bug fixing.',
 ];
 
 export const stats = [
@@ -30,7 +32,7 @@ export const expertise = [
   { icon: 'code', title: 'Full-Stack Development', desc: 'ASP.NET Core, C#, React.js, REST APIs, and enterprise-grade application design.' },
   { icon: 'cloud', title: 'Cloud Engineering', desc: 'Microsoft Azure and AWS — deployment, hosting, and scalable cloud architecture.' },
   { icon: 'cog', title: 'DevOps & Automation', desc: 'CI/CD pipelines, Docker, Kubernetes, Terraform, and infrastructure automation.' },
-  { icon: 'shield', title: 'Systems & Networks', desc: 'Windows/Linux administration, networking, firewalls, and security best practices.' },
+  { icon: 'shield', title: 'Systems & Workplace', desc: 'Microsoft 365, Google Workspace, domain and DNS management, Windows/Linux administration, networking, and security.' },
 ];
 
 export const differentiators = [

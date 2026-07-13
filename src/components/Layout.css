@@ -5,13 +5,13 @@
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
+  padding-top: calc(var(--header-nav-height) + env(safe-area-inset-top, 0));
   position: relative;
   z-index: 1;
   background-color: transparent;
 }
 
-.site-layout > *:not(.bg-gradient-scene) {
+.site-layout > *:not(.bg-gradient-scene):not(.header) {
   position: relative;
   z-index: 1;
 }

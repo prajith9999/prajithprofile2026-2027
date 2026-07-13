@@ -6,8 +6,9 @@ import 'lenis/dist/lenis.css';
 import { prefersReducedMotion } from './gsapUtils';
 import { setLenis, clearLenis } from '../utils/lenis';
 
-export function useSmoothScroll() {
+export function useSmoothScroll(enabled = true) {
   useEffect(() => {
+    if (!enabled) return undefined;
     if (prefersReducedMotion()) return undefined;
 
     const lenis = new Lenis({
@@ -35,5 +36,5 @@ export function useSmoothScroll() {
       clearLenis();
       document.documentElement.classList.remove('lenis', 'lenis-smooth');
     };
-  }, []);
+  }, [enabled]);
 }

@@ -6,6 +6,7 @@
 @import './styles/encoder-theme.css';
 @import './styles/responsive.css';
 @import './styles/mobile.css';
+@import '/src/styles/premium-monochrome.css';
 
 *,
 *::before,
