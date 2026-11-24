@@ -24,7 +24,7 @@
   display: block;
   margin: 0 0 1.15rem;
   padding: 0;
-  color: #c4b5fd !important;
+  color: #93c5fd !important;
   background: transparent !important;
   border: 0 !important;
   font-size: .75rem;
@@ -74,7 +74,7 @@
   max-width: 540px;
   margin: 0 0 clamp(3rem, 6vw, 5rem);
   color: rgba(255,255,255,.66) !important;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family);
   font-size: clamp(1rem, 1.7vw, 1.2rem);
   font-style: italic;
   font-weight: 400;
@@ -108,14 +108,14 @@
   width: auto;
   height: auto;
   padding-top: .1rem;
-  color: #a78bfa !important;
+  color: #60a5fa !important;
   background: transparent !important;
   border: 0 !important;
 }
 
 .contact-page .contact-detail-label {
   margin: 0 0 .55rem;
-  color: #c4b5fd !important;
+  color: #93c5fd !important;
   font-size: .68rem;
   letter-spacing: .11em;
 }
@@ -130,7 +130,7 @@
   overflow-wrap: anywhere;
 }
 
-.contact-page .contact-link:hover { color: #c4b5fd !important; }
+.contact-page .contact-link:hover { color: #93c5fd !important; }
 
 .contact-page .contact-form,
 .contact-page .contact-form:hover {
@@ -154,7 +154,7 @@
 .contact-page .form-group { margin-bottom: 2rem; }
 .contact-page .form-group label {
   margin-bottom: .75rem;
-  color: #c4b5fd !important;
+  color: #93c5fd !important;
   font-size: .68rem;
   letter-spacing: .11em;
 }
@@ -177,7 +177,7 @@
 .contact-page .form-group textarea::placeholder { color: rgba(255,255,255,.38); }
 .contact-page .form-group input:focus,
 .contact-page .form-group select:focus,
-.contact-page .form-group textarea:focus { outline: 0; border-bottom-color: #a78bfa !important; }
+.contact-page .form-group textarea:focus { outline: 0; border-bottom-color: #60a5fa !important; }
 
 .contact-page .form-submit {
   width: auto;
@@ -185,12 +185,12 @@
   margin-top: 1rem;
   padding: 1rem 2rem;
   color: #fff !important;
-  background: #7c3aed !important;
-  border: 1px solid #7c3aed !important;
+  background: #1B4DCC !important;
+  border: 1px solid #1B4DCC !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
-.contact-page .form-submit:hover { color: #fff !important; background: #8b5cf6 !important; border-color: #8b5cf6 !important; }
+.contact-page .form-submit:hover { color: #fff !important; background: #2563eb !important; border-color: #2563eb !important; }
 .contact-page .form-success { color: #ddd6fe; background: transparent; border: 0; padding: 0; margin-bottom: 2rem; }
 
 .contact-page .page-title,

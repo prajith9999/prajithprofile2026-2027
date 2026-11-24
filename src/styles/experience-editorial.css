@@ -25,7 +25,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c4b5fd;
+  color: #93c5fd;
 }
 
 .experience-intro h1 {
@@ -91,10 +91,10 @@
 
 .experience-index {
   padding-top: 0.2rem;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family);
   font-size: 0.9rem;
   font-style: italic;
-  color: #c4b5fd;
+  color: #93c5fd;
 }
 
 .experience-card-meta,
@@ -121,7 +121,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #c4b5fd !important;
+  color: #93c5fd !important;
 }
 
 .experience-card-period {
@@ -153,7 +153,7 @@
 
 .experience-card-tagline {
   margin: 0 0 2rem;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-style: italic;
   line-height: 1.5;
@@ -184,7 +184,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #8b5cf6;
+  color: #2563eb;
 }
 
 @media (max-width: 800px) {

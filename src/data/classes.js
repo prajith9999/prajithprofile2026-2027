@@ -18,7 +18,7 @@ export const onlineClasses = [
     icon: 'cloud',
     duration: '10 Weeks',
     mode: 'Live Online',
-    gradient: 'linear-gradient(145deg, #6d28d9 0%, #8b5cf6 55%, #c4b5fd 100%)',
+    gradient: 'linear-gradient(145deg, #1e40af 0%, #2563eb 55%, #93c5fd 100%)',
     tone: 'dark',
     description: 'Learn cloud fundamentals, deployment models, and core services on Microsoft Azure and Amazon Web Services.',
     topics: ['Azure', 'AWS', 'EC2', 'S3', 'VPC', 'IAM'],

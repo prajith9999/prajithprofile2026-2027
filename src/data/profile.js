@@ -25,7 +25,7 @@ export const stats = [
   { label: 'Years of Experience', value: '4+', count: 4, suffix: '+' },
   { label: 'Companies Worked', value: '4', count: 4, suffix: '' },
   { label: 'Technologies', value: '30+', count: 30, suffix: '+' },
-  { label: 'Current Role', value: 'Architect' },
+  { label: 'Current Role', value: 'Software Engineer' },
 ];
 
 export const expertise = [

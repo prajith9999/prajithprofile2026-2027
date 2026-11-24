@@ -3,6 +3,44 @@ import { profile } from '../data/profile';
 import AppIcon from '../components/AppIcon';
 import './Contact.css';
 
+const NAME_MAX = 50;
+const NAME_MIN = 2;
+
+const SUBJECT_LABELS = {
+  job: 'Job Opportunity',
+  collaboration: 'Collaboration',
+  freelance: 'Freelance Project',
+  classes: 'Online Class Enquiry',
+  other: 'Other',
+};
+
+/** Keep letters/spaces/hyphens/apostrophes and Title Case each word. */
+function formatFullName(value) {
+  const cleaned = value
+    .replace(/[^a-zA-Z\s'-]/g, '')
+    .replace(/\s+/g, ' ')
+    .slice(0, NAME_MAX);
+
+  return cleaned.replace(/\S+/g, (word) => {
+    if (!word) return word;
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+}
+
+function buildMailto({ name, email, subject, message }) {
+  const topic = SUBJECT_LABELS[subject] || subject;
+  const mailSubject = `Portfolio Contact: ${topic}`;
+  const mailBody = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Topic: ${topic}`,
+    '',
+    message,
+  ].join('\n');
+
+  return `mailto:${profile.email}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,16 +49,62 @@ export default function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: name === 'name' ? formatFullName(value) : value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 4000);
+    setError('');
+    setSending(true);
+
+    const topic = SUBJECT_LABELS[formData.subject] || formData.subject;
+    const payload = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      _replyto: formData.email.trim(),
+      _subject: `Portfolio Contact: ${topic}`,
+      topic,
+      message: formData.message.trim(),
+    };
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Unable to send email');
+      }
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      // Fallback: open the visitor's email app addressed to you
+      window.location.href = buildMailto(formData);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setError('Opened your email app as a backup — please press Send there.');
+      setTimeout(() => {
+        setSubmitted(false);
+        setError('');
+      }, 6000);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -80,9 +164,10 @@ export default function Contact() {
             <h3>Send a Message</h3>
             {submitted && (
               <div className="form-success">
-                Thank you! Your message has been sent successfully.
+                Thank you! Your message is on its way to {profile.email}.
               </div>
             )}
+            {error && <div className="form-error">{error}</div>}
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
               <input
@@ -92,8 +177,18 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your name"
+                minLength={NAME_MIN}
+                maxLength={NAME_MAX}
+                autoComplete="name"
+                autoCapitalize="words"
+                spellCheck="false"
+                pattern="[A-Za-z][A-Za-z\s'-]{1,48}"
+                title="Use normal name words, letters only (2–50 characters)"
+                placeholder="e.g. John Smith"
               />
+              <span className="form-hint" aria-live="polite">
+                {formData.name.trim().length}/{NAME_MAX} · Normal case words
+              </span>
             </div>
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
@@ -104,6 +199,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
                 placeholder="your@email.com"
               />
             </div>
@@ -133,11 +229,12 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows="5"
+                maxLength={2000}
                 placeholder="Tell me about the opportunity..."
               />
             </div>
-            <button type="submit" className="btn btn-primary form-submit">
-              Send Message
+            <button type="submit" className="btn btn-primary form-submit" disabled={sending}>
+              {sending ? 'Sending…' : 'Send Message'}
             </button>
           </form>
         </div>

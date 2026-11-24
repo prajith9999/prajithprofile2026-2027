@@ -3,13 +3,15 @@ import AppIcon from '../components/AppIcon';
 import SkillCard from '../components/SkillCard';
 import ClassCard from '../components/ClassCard';
 import ImageCard from '../components/ImageCard';
-import { profile, summary, stats } from '../data/profile';
+import { profile, summary } from '../data/profile';
 import { skillCategories } from '../data/skills';
 import { onlineClasses } from '../data/classes';
 import { images } from '../data/images';
 import { insightCards, prefooterHeadline } from '../data/insights';
 import { education } from '../data/experience';
+import pencilArtCutout from '../assets/Boy Sharpening a Giant Pencil-cutout.png';
 import './Home.css';
+import '../styles/home-layout.css';
 
 const landingStrengths = [
   { title: 'Clean Architecture', desc: 'Building scalable, secure applications with best practices and maintainable code.' },
@@ -46,7 +48,7 @@ export default function Home() {
       <section id="hero" className="hero-apple" aria-label="Introduction">
         <div className="container hero-apple-inner">
           <h1 className="hero-apple-headline">
-            I&apos;m Prajith. Your go-to engineer for{' '}
+            I&apos;m Prajith. Your go&#8209;to engineer for{' '}
             <span className="hero-apple-accent">scalable digital products.</span>
           </h1>
           <p className="hero-apple-body">
@@ -126,6 +128,46 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="strengths-banner" aria-labelledby="strengths-banner-title">
+        <h2 id="strengths-banner-title" className="strengths-banner-title">
+          <span>Professional</span>
+          <span className="strengths-banner-capsule" aria-hidden="true">
+            <img
+              src={pencilArtCutout}
+              alt=""
+              className="strengths-banner-capsule-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>Strengths</span>
+        </h2>
+      </section>
+
+      <section className="section landing-education-section" aria-labelledby="landing-education-title">
+        <div className="container landing-education-shell">
+          <span className="landing-editorial-label">Education</span>
+          <div className="landing-education-row">
+            <div className="landing-education-media">
+              <img
+                src={images.portrait}
+                alt={profile.name}
+                className="landing-education-photo"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="landing-education-copy">
+              <p className="landing-education-name">{profile.name}</p>
+              <h2 id="landing-education-title">{education.degree}</h2>
+              <p>{education.institution}</p>
+              <span>{education.location}</span>
+              <time dateTime={education.year}>{education.year}</time>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="premium-slide">
         <div className="premium-slide-panel">
           <div className="premium-visual-copy">
@@ -136,39 +178,6 @@ export default function Home() {
               From React frontends to Azure deployments — I design, build, and automate
               systems that perform in production.
             </p>
-          </div>
-        </div>
-        <div className="premium-slide-stats stats-bar">
-          <div className="container">
-            <div className="home-stats-minimal">
-              {[
-                { ...stats[0], icon: 'briefcase', gradient: 'linear-gradient(145deg, #0071e3 0%, #2997ff 100%)', tone: 'dark' },
-                { ...stats[1], icon: 'users', gradient: 'linear-gradient(145deg, #6d28d9 0%, #8b5cf6 100%)', tone: 'dark' },
-                { ...stats[2], icon: 'code', gradient: 'linear-gradient(145deg, #3a3a3c 0%, #86868b 100%)', tone: 'dark' },
-                { ...stats[3], icon: 'rocket', gradient: 'linear-gradient(145deg, #d4c4b0 0%, #f5f0e8 100%)', tone: 'light' },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className={`stat-minimal stat-box color-glass-card stat-card${stat.tone === 'light' ? ' color-glass-card--starlight stat-card--light' : ''}`}
-                  style={{ background: stat.gradient }}
-                >
-                  <AppIcon name={stat.icon} size={36} className="stat-minimal-icon" />
-                  <span
-                    className="stat-minimal-value"
-                    {...(stat.count != null
-                      ? {
-                          'data-stat-count': stat.count,
-                          'data-stat-suffix': stat.suffix ?? '',
-                        }
-                      : {})}
-                    aria-label={stat.value}
-                  >
-                    {stat.count != null ? `0${stat.suffix ?? ''}` : stat.value}
-                  </span>
-                  <span className="stat-minimal-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -345,15 +354,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="landing-education">
-            <span className="landing-editorial-label">Education</span>
-            <div className="landing-education-copy">
-              <h2>{education.degree}</h2>
-              <p>{education.institution}</p>
-              <span>{education.location}</span>
-              <time>{education.year}</time>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -392,8 +392,7 @@ export default function Home() {
                 className={`insight-card stat-box color-glass-card${card.tone === 'light' ? ' color-glass-card--starlight' : ''}`}
               >
                 <div className="insight-card-visual color-glass-card__header">
-                  <img src={card.image} alt="" loading="lazy" />
-                  <AppIcon name={card.icon} size={32} className="insight-card-icon" aria-hidden="true" />
+                  <AppIcon name={card.icon} size={36} className="insight-card-icon" aria-hidden="true" />
                 </div>
                 <div className="insight-card-body color-glass-card__body">
                   <span className="insight-card-label">{card.label}</span>
@@ -406,13 +405,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="strengths-banner" aria-labelledby="strengths-banner-title">
-        <h2 id="strengths-banner-title" className="strengths-banner-title">
-          <span>Professional</span>
-          <span className="strengths-banner-capsule" aria-hidden="true" />
-          <span>Strengths</span>
-        </h2>
-      </section>
     </div>
   );
 }

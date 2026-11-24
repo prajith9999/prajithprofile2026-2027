@@ -45,7 +45,7 @@
   height: var(--header-height);
 }
 
-/* PM — pinned left with Apple-style inset */
+/* PM — nav logo: medium sans, pure white + pure blue */
 .header-logo {
   display: inline-flex;
   align-items: center;
@@ -53,19 +53,26 @@
   margin-right: 1.5rem;
   pointer-events: auto;
   will-change: transform, background-color;
-  gap: 0.08rem;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  gap: 0.12em;
+  font-family: 'Albert Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-decoration: none;
   line-height: 1;
-  opacity: 0.88;
+  opacity: 1;
   transition: opacity var(--transition);
 }
 
 .header-logo:hover {
-  opacity: 1;
+  opacity: 0.92;
+}
+
+.header-logo__p,
+.header-logo__m {
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 
 .header-logo__p {
@@ -73,7 +80,7 @@
 }
 
 .header-logo__m {
-  color: #a78bfa;
+  color: #1B4DCC;
 }
 
 .header-nav {
@@ -342,7 +349,7 @@
   .nav-link.active {
     color: var(--apple-purple-light);
     font-weight: var(--font-weight-medium);
-    background: rgba(227, 30, 36, 0.12);
+    background: rgba(27, 77, 204, 0.12);
   }
 
   .nav-mobile-actions {

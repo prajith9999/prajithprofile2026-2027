@@ -23,7 +23,7 @@
 .editorial-kicker {
   display: block;
   margin-bottom: 1.15rem;
-  color: #c4b5fd;
+  color: #93c5fd;
   font-size: .75rem;
   font-weight: 600;
   letter-spacing: .14em;
@@ -79,8 +79,8 @@
 .achievement-stat-index,
 .credential-index,
 .project-index {
-  color: #c4b5fd;
-  font-family: Georgia, 'Times New Roman', serif;
+  color: #93c5fd;
+  font-family: var(--font-family);
   font-size: .85rem;
   font-style: italic;
 }
@@ -102,7 +102,7 @@
   max-width: 620px;
   margin: 0 0 clamp(4rem, 8vw, 7rem);
   color: rgba(255,255,255,.62) !important;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family);
   font-size: clamp(1rem, 2vw, 1.3rem);
   font-style: italic;
   line-height: 1.6;
@@ -137,10 +137,10 @@
 .project-meta { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
 .timeline-year,
 .project-period { margin: 0; padding: 0; color: rgba(255,255,255,.72) !important; border: 0 !important; font-size: .9rem; line-height: 1.5; }
-.timeline-mode { margin: 0; padding: 0; color: #c4b5fd !important; border: 0 !important; font-size: .68rem; letter-spacing: .1em; }
+.timeline-mode { margin: 0; padding: 0; color: #93c5fd !important; border: 0 !important; font-size: .68rem; letter-spacing: .1em; }
 .credential-copy h3,
 .project-card-body h3 { max-width: 16ch; margin: 0 0 1rem; color: #fff !important; font-size: clamp(2rem, 4.5vw, 4.5rem); line-height: 1; letter-spacing: -.05em; }
-.timeline-org { display: block; margin: 0 0 1.25rem; color: #c4b5fd !important; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; font-style: italic; }
+.timeline-org { display: block; margin: 0 0 1.25rem; color: #93c5fd !important; font-family: var(--font-family); font-size: 1.05rem; font-style: italic; }
 .credential-copy p,
 .project-card-body p { max-width: 680px; margin: 0; color: rgba(255,255,255,.68) !important; font-size: .98rem; line-height: 1.75; }
 .project-card-body { min-height: 0; padding: 0 !important; }

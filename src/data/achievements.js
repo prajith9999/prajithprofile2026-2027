@@ -61,7 +61,7 @@ export const projects = [
     period: 'Feb 2023 – Apr 2023',
     technologies: ['HTML', 'CSS', 'JavaScript', 'SQL'],
     description: 'Developed a travel booking platform with consumer-facing booking workflows and database integration.',
-    gradient: 'linear-gradient(145deg, #5b21b6 0%, #8b5cf6 55%, #c4b5fd 100%)',
+    gradient: 'linear-gradient(145deg, #1e3a8a 0%, #2563eb 55%, #93c5fd 100%)',
   },
   {
     id: 2,
@@ -101,6 +101,6 @@ export const projects = [
     period: '2023 – 2024',
     technologies: ['Terraform', 'AWS EC2', 'S3', 'VPC', 'Linux'],
     description: 'Provisioned and automated AWS cloud infrastructure using Terraform, configured VPC and security groups, and managed Linux servers securely.',
-    gradient: 'linear-gradient(145deg, #1e293b 0%, #4c1d95 50%, #8b5cf6 100%)',
+    gradient: 'linear-gradient(145deg, #1e293b 0%, #1e3a8a 50%, #2563eb 100%)',
   },
 ];

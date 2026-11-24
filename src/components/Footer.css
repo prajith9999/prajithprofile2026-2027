@@ -44,11 +44,11 @@
 .footer-kicker {
   display: block;
   margin-bottom: 1rem;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family);
   font-size: 0.78rem;
   font-style: italic;
   letter-spacing: 0.08em;
-  color: var(--accent-purple-soft, #c4b5fd);
+  color: var(--accent-purple-soft, #93c5fd);
 }
 
 .footer-heading {
@@ -66,7 +66,7 @@
 }
 
 .footer-heading .app-icon {
-  color: var(--accent-purple-soft, #c4b5fd);
+  color: var(--accent-purple-soft, #93c5fd);
 }
 
 .footer-col ul {
@@ -95,7 +95,7 @@
 .footer-contact li > .app-icon {
   flex: 0 0 auto;
   margin-top: 0.14em;
-  color: rgba(196, 181, 253, 0.82);
+  color: rgba(147, 197, 253, 0.82);
 }
 
 .footer-col ul li a,
@@ -142,8 +142,8 @@
 }
 
 .footer-social a:hover {
-  background: #7c3aed;
-  border-color: #8b5cf6;
+  background: #1B4DCC;
+  border-color: #2563eb;
   color: var(--color-white);
 }
 

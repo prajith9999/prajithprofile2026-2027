@@ -1,0 +1,361 @@
+/* Landing page — consistent section positions & stacking */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.home-page > section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+/* Shared vertical rhythm */
+.home-page .hero-apple {
+  min-height: calc(100dvh - var(--header-height) - env(safe-area-inset-top, 0));
+  padding: 0;
+}
+
+.home-page .premium-statement,
+.home-page .premium-split,
+.home-page .skills-section,
+.home-page .classes-section,
+.home-page .about-snippet,
+.home-page .landing-credentials,
+.home-page .landing-education-section,
+.home-page .home-prefooter,
+.home-page .strengths-banner {
+  padding-top: clamp(4.5rem, 9vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
+}
+
+.home-page .premium-slide {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.home-page .premium-slide-stats {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: 0;
+}
+
+.home-page .container,
+.home-page .landing-credentials-shell,
+.home-page .technology-brand-shell,
+.home-page .skills-showcase,
+.home-page .classes-showcase {
+  width: min(100% - 2rem, var(--container-max, 980px));
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.home-page .landing-credentials-shell,
+.home-page .technology-brand-shell,
+.home-page .skills-showcase,
+.home-page .classes-showcase {
+  width: min(100% - 2rem, 1320px);
+}
+
+.home-page .hero-apple-inner {
+  width: min(100%, 1100px);
+  margin: 0;
+  padding: clamp(2rem, 6vw, 4rem) max(1.25rem, 4vw) clamp(3rem, 8vw, 5rem);
+}
+
+/* Statement / split / slide */
+.home-page .premium-statement-inner,
+.home-page .premium-split-grid,
+.home-page .premium-visual-copy {
+  width: 100%;
+}
+
+.home-page .premium-split-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.home-page .premium-slide-panel {
+  width: min(100% - 2rem, 1320px);
+  margin: 0 auto;
+}
+
+.home-page .home-stats-minimal {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.15rem);
+  width: 100%;
+}
+
+.home-page .home-role-plain {
+  width: 100%;
+}
+
+/* Skills: always show all — no horizontal swipe */
+.home-page .skills-section-head,
+.home-page .classes-section-head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.home-page .technology-brand-shell {
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  overflow: visible;
+}
+
+.home-page .technology-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.home-page .skills-showcase,
+.home-page .classes-showcase {
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0;
+}
+
+.home-page .skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: unset;
+  scroll-snap-type: none;
+}
+
+.home-page .skills-grid .skill-card {
+  flex: none !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.home-page .classes-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: unset;
+  scroll-snap-type: none;
+}
+
+.home-page .classes-grid .class-card {
+  flex: none !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.home-page .classes-cta {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* About snippet */
+.home-page .about-snippet-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) minmax(260px, 1.15fr) minmax(240px, 0.95fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+  width: 100%;
+}
+
+/* Credentials block */
+.home-page .landing-credentials {
+  display: block;
+}
+
+.home-page .landing-credentials-shell {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 7vw, 6rem);
+}
+
+.home-page .landing-personal,
+.home-page .landing-strengths,
+.home-page .landing-excellence,
+.home-page .landing-education {
+  padding: 0 !important;
+  width: 100%;
+}
+
+.home-page .landing-personal {
+  border-top: 0 !important;
+}
+
+.home-page .landing-strengths,
+.home-page .landing-excellence,
+.home-page .landing-education {
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+  padding-top: clamp(2.5rem, 5vw, 3.5rem) !important;
+}
+
+.home-page .landing-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  width: 100%;
+}
+
+.home-page .landing-strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+  width: 100%;
+}
+
+.home-page .landing-excellence {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto minmax(200px, 0.7fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: end;
+  width: 100%;
+}
+
+.home-page .landing-education,
+.home-page .landing-education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 100%;
+}
+
+.home-page .landing-education-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: center;
+  width: 100%;
+}
+
+/* Prefooter + banner */
+.home-page .home-prefooter-inner {
+  width: min(100% - 2rem, 1320px);
+  margin: 0 auto;
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.home-page .insight-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  width: 100%;
+  margin: 0;
+}
+
+.home-page .strengths-banner {
+  min-height: clamp(420px, 58vh, 640px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.home-page .strengths-banner-title {
+  overflow: visible;
+}
+
+.home-page .strengths-banner-title {
+  width: min(100%, 1200px);
+}
+
+@media (max-width: 1100px) {
+  .home-page .technology-brand-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .home-page .skills-grid,
+  .home-page .classes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .about-snippet-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-page .about-snippet-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .premium-split-grid,
+  .home-page .landing-excellence,
+  .home-page .landing-education-row {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .home-stats-minimal,
+  .home-page .landing-personal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .landing-strengths-grid,
+  .home-page .insight-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .about-snippet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .landing-education-media {
+    width: min(100%, 280px);
+    margin: 0;
+  }
+
+  .home-page .skills-showcase,
+  .home-page .classes-showcase {
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .technology-brand-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .skills-grid,
+  .home-page .classes-grid,
+  .home-page .landing-personal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .home-stats-minimal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .premium-statement,
+  .home-page .premium-split,
+  .home-page .skills-section,
+  .home-page .classes-section,
+  .home-page .about-snippet,
+  .home-page .landing-credentials,
+  .home-page .landing-education-section,
+  .home-page .home-prefooter,
+  .home-page .strengths-banner {
+    padding-top: clamp(3.25rem, 10vw, 4.5rem);
+    padding-bottom: clamp(3.25rem, 10vw, 4.5rem);
+  }
+
+  .home-page .premium-slide {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .home-page .landing-credentials-shell {
+    gap: clamp(2.75rem, 8vw, 4rem);
+  }
+}

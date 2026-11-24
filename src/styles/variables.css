@@ -13,12 +13,11 @@
   --color-text-muted: rgba(245, 245, 247, 0.68);
   --color-text-subtle: rgba(245, 245, 247, 0.48);
 
-  /* iPad Air finish colors */
-  --apple-blue: #f2f2ee;
-  --apple-blue-light: #ffffff;
-  /* Brand accent — encoder red */
-  --apple-purple: #d8d8d2;
-  --apple-purple-light: #f4f4ef;
+  /* Brand accents — blue */
+  --apple-blue: #1B4DCC;
+  --apple-blue-light: #60a5fa;
+  --apple-purple: #1B4DCC;
+  --apple-purple-light: #93c5fd;
   --apple-space-gray: #424245;
   --apple-space-gray-light: #86868b;
   --apple-starlight: #e8e0d4;
@@ -26,23 +25,23 @@
 
   /* Accents */
   --color-violet: var(--apple-purple);
-  --color-violet-dark: #a4a4a0;
-  --color-violet-light: rgba(255, 255, 255, 0.12);
-  --color-green: #b7b7b2;
-  --color-green-dark: #777773;
-  --color-green-light: rgba(255, 255, 255, 0.1);
+  --color-violet-dark: #1e3a8a;
+  --color-violet-light: rgba(27, 77, 204, 0.18);
+  --color-green: #34c759;
+  --color-green-dark: #248a3d;
+  --color-green-light: rgba(52, 199, 89, 0.12);
   --color-rose: var(--color-green);
   --color-rose-dark: var(--color-green-dark);
   --color-rose-light: var(--color-green-light);
-  --color-gradient-start: #ffffff;
+  --color-gradient-start: #60a5fa;
   --color-gradient-mid: var(--apple-purple);
-  --color-gradient-end: #8b8b87;
+  --color-gradient-end: #1e40af;
   --color-gradient-soft: var(--apple-purple-light);
 
   /* Legacy compat */
   --color-blue: var(--apple-blue);
-  --color-blue-dark: #0077ed;
-  --color-blue-light: rgba(0, 113, 227, 0.18);
+  --color-blue-dark: #153ea8;
+  --color-blue-light: rgba(27, 77, 204, 0.18);
   --color-orange: var(--apple-purple);
   --color-orange-dark: var(--color-violet-dark);
   --color-orange-light: var(--color-violet-light);
@@ -61,9 +60,9 @@
   --color-ash-light: rgba(255, 255, 255, 0.04);
   --color-ash-darker: rgba(255, 255, 255, 0.08);
 
-  /* Card color fills — iPad Air finishes */
-  --card-blue: linear-gradient(145deg, #111111 0%, #353535 55%, #666662 100%);
-  --card-purple: linear-gradient(145deg, #242424 0%, #555552 55%, #8c8c87 100%);
+  /* Card color fills */
+  --card-blue: linear-gradient(145deg, #1B4DCC 0%, #2563eb 55%, #60a5fa 100%);
+  --card-purple: linear-gradient(145deg, #1e3a8a 0%, #1B4DCC 55%, #93c5fd 100%);
   --card-gray: linear-gradient(145deg, #3a3a3c 0%, #636366 55%, #86868b 100%);
   --card-starlight: linear-gradient(145deg, #d4c4b0 0%, #e8e0d4 55%, #f5f0e8 100%);
 

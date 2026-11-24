@@ -3,6 +3,7 @@ import AppIcon from '../components/AppIcon';
 import { profile, summary, stats } from '../data/profile';
 import { education } from '../data/experience';
 import { stories } from '../data/stories';
+import { images } from '../data/images';
 import './About.css';
 
 const strengths = [
@@ -148,12 +149,23 @@ export default function About() {
       <section className="section education-section">
         <div className="container">
           <h2 className="section-title">Education</h2>
-          <div className="education-card">
-            <div className="education-simple">
-              <h3>{education.degree}</h3>
-              <p className="education-institution">{education.institution}</p>
-              <p className="education-location">{education.location}</p>
-              <span className="education-period">{education.year}</span>
+          <div className="education-layout">
+            <div className="education-card">
+              <div className="education-simple">
+                <h3>{education.degree}</h3>
+                <p className="education-institution">{education.institution}</p>
+                <p className="education-location">{education.location}</p>
+                <span className="education-period">{education.year}</span>
+              </div>
+            </div>
+            <div className="education-photo-wrap">
+              <img
+                src={images.portrait}
+                alt={profile.name}
+                className="education-photo"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>

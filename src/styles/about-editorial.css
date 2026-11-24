@@ -28,7 +28,7 @@
 .about-page .section-label {
   display: block;
   margin-bottom: 1.15rem;
-  color: #c4b5fd !important;
+  color: #93c5fd !important;
   font-size: .75rem;
   font-weight: 600;
   letter-spacing: .14em;
@@ -143,7 +143,7 @@
 .about-page .story-chapter {
   display: block;
   margin-bottom: 1rem;
-  color: #c4b5fd;
+  color: #93c5fd;
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .14em;
@@ -152,10 +152,36 @@
 .about-page .story-content h3 { margin: 0 0 1.25rem; color: #fff; font-size: clamp(2.25rem, 5vw, 5rem); line-height: .98; letter-spacing: -.055em; }
 .about-page .story-content p { max-width: 620px; color: rgba(255,255,255,.68); font-size: 1rem; line-height: 1.75; }
 
-.about-page .personal-grid { gap: clamp(2.5rem, 6vw, 6rem); }
-.about-page .personal-card { min-height: 0; padding: 0; background: transparent !important; border: 0 !important; box-shadow: none !important; }
-.about-page .personal-label { margin-bottom: .65rem; color: #c4b5fd !important; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
-.about-page .personal-value { color: #fff !important; font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 500; }
+.about-page .personal-grid { gap: clamp(2.5rem, 6vw, 6rem); overflow: visible; }
+.about-page .personal-card {
+  min-height: 0;
+  padding: 1.35rem 0 0;
+  overflow: visible !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(147, 197, 253, 0.4) !important;
+  box-shadow: none !important;
+}
+.about-page .personal-label {
+  display: block;
+  margin: 0 0 .75rem;
+  padding-top: 0.15rem;
+  overflow: visible !important;
+  color: #93c5fd !important;
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: normal;
+}
+.about-page .personal-value {
+  overflow: visible !important;
+  color: #fff !important;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
 
 .about-page .values-hero-shell { padding: 0; }
 .about-page .values-hero-headline { grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 0; margin-bottom: clamp(4rem, 8vw, 7rem); gap: clamp(1.5rem, 4vw, 4rem); overflow: visible; }
@@ -171,7 +197,7 @@
 }
 .about-page .values-hero-title--left,
 .about-page .values-hero-title--right { justify-self: start; align-self: auto; max-width: none; padding: 0; text-align: left; }
-.about-page .values-hero-title--right { color: #a78bfa !important; }
+.about-page .values-hero-title--right { color: #60a5fa !important; }
 .about-page .values-hero-title .split-line,
 .about-page .values-hero-title .split-line-mask,
 .about-page .values-hero-title .split-word,
@@ -196,7 +222,7 @@
 .about-page .education-card,
 .about-page .education-card:hover { max-width: 760px; padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
 .about-page .education-simple h3 { margin-bottom: 1rem; color: #fff !important; font-size: clamp(2rem, 4vw, 4rem); line-height: 1; letter-spacing: -.045em; }
-.about-page .education-institution { margin-bottom: .65rem; color: #c4b5fd !important; font-family: Georgia, 'Times New Roman', serif; font-size: 1.15rem; font-style: italic; }
+.about-page .education-institution { margin-bottom: .65rem; color: #93c5fd !important; font-family: var(--font-family); font-size: 1.15rem; font-style: italic; }
 .about-page .education-location { margin-bottom: .65rem; color: rgba(255,255,255,.62) !important; }
 .about-page .education-period { padding: 0; color: #fff !important; border: 0 !important; }
 

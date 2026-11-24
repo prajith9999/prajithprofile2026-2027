@@ -57,7 +57,7 @@
   height: 80vw;
   top: 10%;
   left: -20%;
-  background: radial-gradient(circle, rgba(227, 30, 36, 0.45) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(27, 77, 204, 0.45) 0%, transparent 65%);
   animation: bg-fluid-flow-a 18s ease-in-out infinite;
 }
 
@@ -84,7 +84,7 @@
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(227, 30, 36, 0.22) 0%,
+    rgba(27, 77, 204, 0.22) 0%,
     transparent 40%,
     rgba(0, 0, 0, 0.35) 70%,
     rgba(139, 10, 16, 0.18) 100%
@@ -157,11 +157,11 @@
   background: linear-gradient(
     125deg,
     #000000 0%,
-    #e31e24 18%,
-    #4a0808 36%,
+    #1B4DCC 18%,
+    #0b1f4a 36%,
     #000000 52%,
-    #7a1010 68%,
-    #ff6b6f 82%,
+    #153ea8 68%,
+    #60a5fa 82%,
     #000000 100%
   );
   background-size: 300% 300%;
@@ -183,7 +183,7 @@
   height: min(72vw, 640px);
   top: -12%;
   left: -8%;
-  background: radial-gradient(circle, rgba(227, 30, 36, 0.55) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(27, 77, 204, 0.55) 0%, transparent 68%);
   animation: bg-blob-drift-a 26s ease-in-out infinite;
 }
 
@@ -192,7 +192,7 @@
   height: min(58vw, 520px);
   top: 38%;
   right: -14%;
-  background: radial-gradient(circle, rgba(139, 10, 16, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(21, 62, 168, 0.5) 0%, transparent 70%);
   animation: bg-blob-drift-b 32s ease-in-out infinite;
 }
 
@@ -201,7 +201,7 @@
   height: min(48vw, 440px);
   bottom: -10%;
   left: 22%;
-  background: radial-gradient(circle, rgba(255, 120, 60, 0.28) 0%, transparent 72%);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.28) 0%, transparent 72%);
   animation: bg-blob-drift-c 24s ease-in-out infinite;
 }
 
@@ -210,7 +210,7 @@
   height: min(42vw, 380px);
   top: 18%;
   left: 48%;
-  background: radial-gradient(circle, rgba(90, 20, 80, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%);
   animation: bg-blob-drift-d 30s ease-in-out infinite;
 }
 

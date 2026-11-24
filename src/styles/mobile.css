@@ -271,23 +271,20 @@
 
 @media (max-width: 640px) {
   .personal-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1.25rem;
-    padding-bottom: 0.35rem;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .personal-grid::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.25rem;
+    overflow: visible;
+    padding-top: 0.25rem;
+    padding-bottom: 0;
+    scroll-snap-type: none;
   }
 
   .personal-card {
-    flex: 0 0 min(70vw, 200px);
-    scroll-snap-align: start;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
   }
 
   .values-hero-title {

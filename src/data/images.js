@@ -12,4 +12,5 @@ export const images = {
   partnership: img('Partnership-pana.png'),
   computerTroubleshooting: img('Computer troubleshooting-pana.png'),
   omegaRedClock: img('WANDKLOK OMEGA RED.jpg'),
+  portrait: img('prajithns-portrait.jpeg'),
 };

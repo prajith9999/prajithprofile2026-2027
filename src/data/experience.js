@@ -25,7 +25,7 @@ export const experience = [
     period: 'Apr 2024 – May 2025',
     type: 'Full-Time',
     tagline: 'Full-stack delivery in production',
-    gradient: 'linear-gradient(160deg, #7c3aed 0%, #5b21b6 45%, #1e1b4b 100%)',
+    gradient: 'linear-gradient(160deg, #1B4DCC 0%, #1e3a8a 45%, #0b1a3a 100%)',
     highlights: [
       'Worked as a .NET Full Stack Developer with 1 year and 2 months of professional experience.',
       'Contributed to Cloud & DevOps using AWS and Microsoft Azure (App Service, VMs, ACR, AKS).',
